@@ -1,0 +1,10 @@
+<div class="mx-auto max-w-sm">
+  <.simple_form for={@form} id="login-form" action={~p"/username/log_in"} phx-update="ignore">
+    <.input field={@form[:username]} type="text" label="Username" required />
+    <:actions>
+      <.button phx-disable-with="Signing in..." class="w-full">
+        Sign in <span aria-hidden="true">→</span>
+      </.button>
+    </:actions>
+  </.simple_form>
+</div>

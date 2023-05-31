@@ -1,0 +1,57 @@
+<.header>
+  <.back navigate={~p"/"}>Back to polls</.back>
+  <%= @poll.title %>
+  <:subtitle><%= @poll.description %></:subtitle>
+  <:actions>
+    <.link
+      :if={@live_action == :show}
+      navigate={~p"/polls/#{@poll.id}/result"}
+      type="button"
+      class="rounded hover:rounded-lg bg-teal-400 p-3"
+    >
+      Show Result
+    </.link>
+
+    <.link
+      :if={@live_action == :show_result}
+      navigate={~p"/polls/#{@poll.id}"}
+      type="button"
+      class="rounded hover:rounded-lg bg-teal-400 p-3"
+    >
+      Hide Result
+    </.link>
+  </:actions>
+</.header>
+
+<div :if={@live_action == :show}>
+  <.form
+    class="flex flex-col w-full gap-3 pt-3 pb-2 px-2 relative mt-5"
+    for={@form}
+    id="voting-form"
+    phx-submit="save"
+    phx-change="validate"
+  >
+    <div :for={option <- @poll.options} class="relative w-full h-12">
+      <PollyComponents.vote_option
+        field={@form[:option]}
+        option={option}
+        voted={@already_voted}
+        selected_option_id={@selected_option_id}
+      />
+    </div>
+    <.button phx-disable-with="Submitting" class="w-full">
+      Submit
+    </.button>
+  </.form>
+</div>
+
+<div :if={@live_action == :show_result}>
+  <div :for={option <- @poll.options} class="mt-5 mb-5">
+    <PollyComponents.result
+      id={option.id}
+      label={option.text}
+      max={@poll.total_votes}
+      value={option.votes}
+    />
+  </div>
+</div>
