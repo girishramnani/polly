@@ -67,6 +67,8 @@ The `VoteRegistry` used here is also using partitioned storage to allow for more
 
 - Similarly a simpler `VoteManager` backed by an `ets` table similar to `PollyManager` could have definitely worked but I was stuck on one of the criterias of the test i.e. "Action of one user shouldn't block the other".
 
+- Parts of this application may seem a bit over-engineered but I did so keeping in mind that there can be thousands of users using this application at a time.
+
 ## TradeOff
 
 - I didn't spend alot of time on the UI and hence its really simple, obviously I would have done a better job if this was production.
