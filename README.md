@@ -7,6 +7,16 @@ Polly is a liveview based polling application. It allows the users to
 - Checking for results of the polls
 - Updates the results and vote count in real time
 
+
+## Demo 
+A small demo of showing the vote counts increasing in real-time
+
+
+
+https://github.com/girishramnani/polly/assets/6551988/6219da0c-1f7b-443d-9df0-c856e4ff2d3b
+
+
+
 ## Things to know
 
 - Once you sign in, just click at the username in the upper right corner to log out.
