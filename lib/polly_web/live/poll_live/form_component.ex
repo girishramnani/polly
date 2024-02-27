@@ -64,7 +64,9 @@ defmodule PollyWeb.PollLive.FormComponent do
         existing = Ecto.Changeset.get_field(changeset, :options, [])
         Ecto.Changeset.put_embed(changeset, :options, existing ++ [%{}])
       end)
-      |> assign(:form, to_form(socket.assigns.changeset))
+
+    dbg(socket.assigns)
+    socket = assign(socket, :form, to_form(socket.assigns.changeset))
 
     {:noreply, socket}
   end
@@ -87,6 +89,8 @@ defmodule PollyWeb.PollLive.FormComponent do
       socket.assigns.poll
       |> Poll.changeset(poll_params)
       |> Map.put(:action, :validate)
+
+    socket = socket |> update(:changeset, fn _changeset -> changeset end)
 
     {:noreply, assign_form(socket, changeset)}
   end
