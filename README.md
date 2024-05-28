@@ -72,7 +72,6 @@ The `VoteRegistry` used here is also using partitioned storage to allow for more
 ## TradeOff
 
 - I didn't spend alot of time on the UI and hence its really simple, obviously I would have done a better job if this was production.
-- There is a small bug in the `Poll Form` where `add-option` button clears all the data, I didn't have the energy to fix it but I could definitely fix, potentially just store the information on `phx-change` and load it back when a new option is added. But yeah its functional for now.
 - I could add alot more tests but felt what I have added cover a good chung of functionality.
 - Could have added few more validations.
 - Could have added functionalities like edit poll, delete poll, delete option etc but I focused on the core for the test.
