@@ -72,7 +72,7 @@ The `VoteRegistry` used here is also using partitioned storage to allow for more
 ## TradeOff
 
 - I didn't spend alot of time on the UI and hence its really simple, obviously I would have done a better job if this was production.
-- I could add alot more tests but felt what I have added cover a good chung of functionality.
+- I could add alot more tests but felt what I have added cover a good chunk of functionality.
 - Could have added few more validations.
 - Could have added functionalities like edit poll, delete poll, delete option etc but I focused on the core for the test.
 - Could have considered using `Horde` based Registry and Supervisor to make this application distributed but that seemed a bit too overkill for this test. But I have production experience with `Horde` and distributed elixir application just to be aware.
