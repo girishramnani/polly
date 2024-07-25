@@ -1,0 +1,1879 @@
+
+17:03:26.540 [info] Loading 39 CA(s) from :otp store
+
+17:03:28.789 id=0 [debug] handled request client -> server initialize in 1457ms
+
+17:03:28.906 [debug] sent notification server -> client window/logMessage
+
+17:03:29.075 [debug] NextLS v0.23.1 has initialized!
+
+17:03:29.076 [debug] sent notification server -> client window/logMessage
+
+17:03:29.076 [debug] Log file located at c:/Gaurav/Projects/polly/.elixir-tools/next-ls.log
+
+17:03:29.194 [debug] sent notification server -> client window/logMessage
+
+17:03:29.194 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+17:03:29.195 id=35 [debug] sent request server -> client client/registerCapability
+
+17:03:55.504 [debug] sent notification server -> client window/logMessage
+
+17:03:55.512 [debug] Booting runtimes...
+
+17:03:55.561 id=4 [debug] sent request server -> client window/workDoneProgress/create
+
+17:03:55.588 [debug] sent notification server -> client $/progress
+
+17:03:55.701 [debug] sent notification server -> client window/logMessage
+
+17:03:55.701 [info] Beginning DB migration...
+
+17:03:55.787 [debug] sent notification server -> client window/logMessage
+
+17:03:55.787 [info] Database is being upgraded from version 0 to 7.
+
+This will trigger a full recompilation in order to re-index your codebase.
+
+
+17:03:55.807 [debug] sent notification server -> client window/logMessage
+
+17:03:55.807 [info] Finished DB migration...
+
+17:03:55.860 [error] ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, NextLS.Runtime, {:badarg, [{NextLS.Runtime, :init, 1, [file: ~c"lib/next_ls/runtime.ex", line: 135, error_info: %{cause: {1, :binary, :type, nil}, function: :format_bs_fail, module: :erl_erts_errors}]}, {:gen_server, :init_it, 2, [file: ~c"gen_server.erl", line: 2057]}, {:gen_server, :init_it, 6, [file: ~c"gen_server.erl", line: 2012]}, {:proc_lib, :init_p_do_apply, 3, [file: ~c"proc_lib.erl", line: 329]}]}}}}
+    (next_ls 0.23.1) lib/next_ls.ex:899: anonymous fn/5 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/enum.ex:2531: Enum."-reduce/3-lists^foldl/2-0-"/3
+    (next_ls 0.23.1) lib/next_ls.ex:894: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+17:03:55.860 [debug] sent notification server -> client window/logMessage
+
+17:03:55.880 [debug] handled notification client -> server textDocument/didOpen in 19ms
+
+17:03:55.881 [debug] handled notification client -> server textDocument/didOpen in 307µs
+
+17:03:55.883 [debug] handled notification client -> server textDocument/didOpen in 2ms
+
+17:03:56.004 id=1 [debug] handled request client -> server textDocument/documentSymbol in 120ms
+
+17:03:56.118 id=2 [debug] handled request client -> server textDocument/codeAction in 114ms
+
+17:03:56.119 id=3 [debug] handled request client -> server textDocument/documentSymbol in 819µs
+
+17:04:57.165 id=4 [debug] handled request client -> server textDocument/documentSymbol in 922µs
+
+17:04:57.209 id=5 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:04:57.575 id=6 [debug] handled request client -> server textDocument/documentSymbol in 819µs
+
+17:05:00.486 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 26ms
+
+17:06:02.259 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 5ms
+
+17:07:07.868 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 11ms
+
+17:07:08.249 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 8ms
+
+17:07:08.865 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 9ms
+
+17:07:09.516 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 4ms
+
+17:07:10.029 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 2ms
+
+17:07:38.693 [debug] handled notification client -> server textDocument/didClose in 132ms
+
+17:07:38.697 [debug] handled notification client -> server textDocument/didOpen in 3ms
+
+17:07:38.701 id=7 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+17:07:38.750 id=8 [debug] handled request client -> server textDocument/documentSymbol in 49ms
+
+17:07:38.787 [debug] handled notification client -> server $/cancelRequest in 36ms
+
+17:07:38.796 id=9 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+17:07:39.011 id=10 [debug] handled request client -> server textDocument/documentSymbol in 14ms
+
+17:07:52.855 id=11 [debug] handled request client -> server textDocument/hover in 1109ms
+
+17:07:54.742 id=12 [debug] handled request client -> server textDocument/hover in 1004ms
+
+17:07:54.743 [debug] handled notification client -> server $/cancelRequest in 205µs
+
+17:08:25.451 id=13 [debug] handled request client -> server textDocument/hover in 1038ms
+
+17:08:28.108 id=14 [debug] handled request client -> server textDocument/codeAction in 17ms
+
+17:08:28.882 id=15 [debug] handled request client -> server textDocument/codeAction in 12ms
+
+17:08:29.843 id=16 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+17:08:31.963 id=17 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:33.926 id=18 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+17:08:34.867 id=19 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+17:08:36.880 id=20 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:08:37.508 id=21 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+17:08:37.910 id=22 [debug] handled request client -> server textDocument/codeAction in 4ms
+
+17:08:38.488 id=23 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:40.202 id=24 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:08:42.632 id=25 [debug] handled request client -> server textDocument/codeAction in 716µs
+
+17:08:42.898 id=26 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:43.201 id=27 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:08:43.626 id=28 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+17:08:45.599 id=29 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+17:08:46.069 id=30 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:47.009 id=31 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:47.413 id=32 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:08:48.337 id=33 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:49.433 id=34 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:08:51.262 id=35 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+17:08:51.584 id=36 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:08:52.054 id=37 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+17:08:52.517 id=38 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:08:53.030 id=39 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+17:08:54.743 id=40 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:08:57.557 id=41 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+17:09:08.108 id=42 [debug] handled request client -> server textDocument/hover in 1004ms
+
+17:09:13.971 id=43 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+17:09:15.691 id=44 [debug] handled request client -> server textDocument/hover in 1004ms
+
+17:09:15.691 [debug] handled notification client -> server $/cancelRequest in 205µs
+
+17:09:16.693 id=45 [debug] handled request client -> server textDocument/hover in 1001ms
+
+17:09:16.693 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+17:09:16.695 id=46 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:09:18.868 id=47 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+17:09:19.246 id=48 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:09:22.922 id=49 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:09:23.545 id=50 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:09:24.124 id=51 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+17:09:24.687 id=52 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:09:25.317 id=53 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+17:09:26.286 id=54 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:09:29.440 id=55 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+17:15:07.994 id=56 [debug] handled request client -> server textDocument/codeAction in 26ms
+
+17:15:09.601 id=57 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+17:15:09.919 id=58 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+17:17:08.086 id=59 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+17:42:19.110 id=60 [debug] handled request client -> server textDocument/hover in 1047ms
+
+18:00:43.427 id=61 [debug] handled request client -> server textDocument/codeAction in 14ms
+
+18:00:52.349 id=62 [debug] handled request client -> server textDocument/codeAction in 6ms
+
+18:01:01.825 id=63 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+18:01:03.111 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+18:01:03.111 [debug] sent notification server -> client window/logMessage
+
+18:01:03.130 id=65 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+18:02:49.641 id=66 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+18:07:06.427 id=67 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+18:29:15.114 id=68 [debug] handled request client -> server shutdown in 182ms
+
+18:29:15.141 [error] Writer crashed (:"The pipe is being closed.\r\n")
+
+10:37:49.785 [info] Loading 39 CA(s) from :otp store
+
+10:37:54.253 id=0 [debug] handled request client -> server initialize in 3124ms
+
+10:37:54.411 [debug] sent notification server -> client window/logMessage
+
+10:37:54.491 [debug] NextLS v0.23.1 has initialized!
+
+10:37:54.491 [debug] sent notification server -> client window/logMessage
+
+10:37:54.492 [debug] Log file located at c:/Gaurav/Projects/polly/.elixir-tools/next-ls.log
+
+10:37:54.557 [debug] sent notification server -> client window/logMessage
+
+10:37:54.557 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+10:37:54.557 id=1831 [debug] sent request server -> client client/registerCapability
+
+10:38:18.497 [debug] sent notification server -> client window/logMessage
+
+10:38:18.511 [debug] Booting runtimes...
+
+10:38:18.679 id=1863 [debug] sent request server -> client window/workDoneProgress/create
+
+10:38:18.748 [debug] sent notification server -> client $/progress
+
+10:38:19.009 [debug] sent notification server -> client window/logMessage
+
+10:38:19.009 [info] Beginning DB migration...
+
+10:38:19.134 [debug] sent notification server -> client window/logMessage
+
+10:38:19.135 [info] Database is on the latest version: 7
+
+10:38:19.136 [debug] sent notification server -> client window/logMessage
+
+10:38:19.140 [info] Finished DB migration...
+
+10:38:19.231 [error] ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, NextLS.Runtime, {:badarg, [{NextLS.Runtime, :init, 1, [file: ~c"lib/next_ls/runtime.ex", line: 135, error_info: %{cause: {1, :binary, :type, nil}, function: :format_bs_fail, module: :erl_erts_errors}]}, {:gen_server, :init_it, 2, [file: ~c"gen_server.erl", line: 2057]}, {:gen_server, :init_it, 6, [file: ~c"gen_server.erl", line: 2012]}, {:proc_lib, :init_p_do_apply, 3, [file: ~c"proc_lib.erl", line: 329]}]}}}}
+    (next_ls 0.23.1) lib/next_ls.ex:899: anonymous fn/5 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/enum.ex:2531: Enum."-reduce/3-lists^foldl/2-0-"/3
+    (next_ls 0.23.1) lib/next_ls.ex:894: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+10:38:19.231 [debug] sent notification server -> client window/logMessage
+
+10:38:19.292 [debug] handled notification client -> server textDocument/didOpen in 60ms
+
+10:38:19.587 id=1 [debug] handled request client -> server textDocument/documentSymbol in 295ms
+
+10:38:20.053 id=2 [debug] handled request client -> server textDocument/codeAction in 466ms
+
+10:38:20.062 id=3 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+11:14:44.948 [debug] handled notification client -> server textDocument/didOpen in 12ms
+
+11:14:44.992 id=4 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+11:14:44.996 id=5 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:14:45.478 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 368ms
+
+11:14:45.479 id=6 [debug] handled request client -> server textDocument/documentSymbol in 410µs
+
+11:15:02.145 [debug] handled notification client -> server textDocument/didOpen in 205µs
+
+11:15:02.146 id=7 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+11:15:02.148 id=8 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:15:02.361 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+11:15:02.421 id=9 [debug] handled request client -> server textDocument/documentSymbol in 512µs
+
+11:33:36.896 id=10 [debug] handled request client -> server textDocument/codeAction in 9ms
+
+11:33:37.130 id=11 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:33:37.666 [debug] handled notification client -> server textDocument/didChange in 117ms
+
+11:33:37.667 id=12 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:33:37.675 id=13 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+11:33:37.677 id=14 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:33:38.022 [debug] handled notification client -> server textDocument/didChange in 308µs
+
+11:33:38.116 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:33:38.116 [debug] sent notification server -> client window/logMessage
+
+11:33:38.352 id=15 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:33:38.357 id=16 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:33:38.388 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+11:33:42.384 id=17 [debug] handled request client -> server textDocument/hover in 1098ms
+
+11:33:42.425 [debug] handled notification client -> server $/cancelRequest in 40ms
+
+11:33:43.428 id=18 [debug] handled request client -> server textDocument/hover in 1002ms
+
+11:33:43.428 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:33:43.429 id=19 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+11:34:47.094 id=20 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+11:34:55.631 id=21 [debug] handled request client -> server textDocument/hover in 1002ms
+
+11:34:55.634 id=22 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+11:34:55.635 id=23 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:34:55.635 id=24 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:34:55.641 id=25 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+11:35:41.420 id=26 [debug] handled request client -> server textDocument/hover in 1000ms
+
+11:35:41.421 id=27 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:35:41.421 id=28 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:35:41.422 [debug] handled notification client -> server $/cancelRequest in 205µs
+
+11:35:42.426 id=29 [debug] handled request client -> server textDocument/hover in 1003ms
+
+11:35:42.427 id=30 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+11:35:42.427 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:35:43.429 id=31 [debug] handled request client -> server textDocument/hover in 1002ms
+
+11:35:43.431 id=32 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:35:43.450 [debug] handled notification client -> server $/cancelRequest in 18ms
+
+11:35:44.452 id=33 [debug] handled request client -> server textDocument/hover in 1002ms
+
+11:35:44.453 id=34 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+11:35:44.453 id=35 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:35:44.453 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:37:29.311 id=36 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:37:29.594 id=37 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+11:37:30.989 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+11:37:30.999 id=38 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:37:31.108 id=39 [debug] handled request client -> server textDocument/documentSymbol in 19ms
+
+11:37:31.131 id=40 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+11:37:31.846 id=41 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:37:36.009 id=42 [debug] handled request client -> server textDocument/hover in 1000ms
+
+11:37:36.010 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:37:37.011 id=43 [debug] handled request client -> server textDocument/hover in 1000ms
+
+11:37:38.146 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:37:38.146 [debug] sent notification server -> client window/logMessage
+
+11:37:38.177 [debug] handled notification client -> server $/cancelRequest in 717µs
+
+11:37:38.181 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:37:38.181 [debug] sent notification server -> client window/logMessage
+
+11:37:38.183 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+11:37:41.645 id=45 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:37:51.105 id=46 [debug] handled request client -> server textDocument/hover in 1021ms
+
+11:37:51.105 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:38:39.354 [debug] handled notification client -> server $/setTrace in 173ms
+
+11:38:42.726 [debug] handled notification client -> server $/setTrace in 3ms
+
+11:39:39.805 [debug] handled notification client -> server $/setTrace in 1ms
+
+11:39:52.268 id=47 [debug] handled request client -> server textDocument/codeAction in 20ms
+
+11:39:52.536 id=48 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:39:52.570 id=49 [debug] handled request client -> server textDocument/documentSymbol in 32ms
+
+11:39:54.543 id=50 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:39:54.798 id=51 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:39:54.844 id=52 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+11:39:57.335 id=53 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+11:40:09.475 [debug] handled notification client -> server textDocument/didOpen in 2ms
+
+11:40:09.475 id=54 [debug] handled request client -> server textDocument/codeAction in 716µs
+
+11:40:09.487 id=55 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+11:40:09.756 id=56 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:40:12.915 id=57 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+11:40:13.185 id=58 [debug] handled request client -> server textDocument/codeAction in 6ms
+
+11:40:13.226 id=59 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+11:40:14.798 id=60 [debug] handled request client -> server textDocument/hover in 1012ms
+
+11:40:14.798 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+11:40:14.800 id=61 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+11:40:15.718 id=62 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:41:20.152 id=63 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:41:21.093 id=64 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:41:21.344 id=65 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:41:21.393 id=66 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:41:23.163 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+11:41:23.164 id=67 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+11:41:23.449 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+11:41:23.451 id=68 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:41:23.552 id=69 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:41:23.555 id=70 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:41:23.760 id=71 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:41:26.545 id=72 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:41:26.910 id=73 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:41:27.439 id=74 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:41:28.247 id=75 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:41:28.711 id=76 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:41:29.389 id=77 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:41:29.806 id=78 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:41:30.177 id=79 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:41:30.897 [debug] handled notification client -> server textDocument/didChange in 205µs
+
+11:41:30.902 id=80 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+11:41:31.003 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:41:31.005 id=81 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:41:31.252 id=82 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+11:41:31.538 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:41:31.539 id=83 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:41:31.639 id=84 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:41:31.642 id=85 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:41:31.956 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:41:31.956 [debug] sent notification server -> client window/logMessage
+
+11:41:32.359 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 2ms
+
+11:41:51.933 id=86 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:53:05.463 [debug] handled notification client -> server textDocument/didOpen in 5ms
+
+11:53:05.467 id=87 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+11:53:05.470 id=88 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:53:05.718 id=89 [debug] handled request client -> server textDocument/documentSymbol in 307µs
+
+11:53:05.730 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 2ms
+
+11:53:07.557 [debug] handled notification client -> server textDocument/didChange in 4ms
+
+11:53:07.562 id=90 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+11:53:07.665 id=91 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+11:53:07.710 id=92 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+11:53:10.314 id=93 [debug] handled request client -> server textDocument/hover in 1002ms
+
+11:53:10.314 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:53:11.315 id=94 [debug] handled request client -> server textDocument/hover in 1000ms
+
+11:53:58.371 id=95 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+11:53:58.619 id=96 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+11:53:58.674 id=97 [debug] handled request client -> server textDocument/documentSymbol in 13ms
+
+11:53:59.556 id=98 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:53:59.808 id=99 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:53:59.858 id=100 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+11:57:50.970 id=101 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:57:51.226 id=102 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:57:51.276 id=103 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+11:57:52.468 id=104 [debug] handled request client -> server textDocument/codeAction in 12ms
+
+11:57:52.876 [debug] handled notification client -> server textDocument/didChange in 409µs
+
+11:57:52.879 id=105 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:57:53.192 [debug] sent notification server -> client window/logMessage
+
+11:57:53.192 id=106 [debug] handled request client -> server textDocument/documentSymbol in 198ms
+
+11:57:53.194 [debug] sent notification server -> client window/logMessage
+
+11:57:53.194 id=107 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:57:53.208 id=108 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:57:57.276 [debug] handled notification client -> server textDocument/didChange in 409µs
+
+11:57:57.278 id=109 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:57:57.378 id=110 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:57:57.379 id=111 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:57:57.588 id=112 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:57:59.974 id=113 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:00.823 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:00.825 id=114 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:01.115 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:01.118 id=115 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:58:01.219 [debug] sent notification server -> client window/logMessage
+
+11:58:01.219 id=116 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:01.221 [debug] sent notification server -> client window/logMessage
+
+11:58:01.222 id=117 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:01.426 id=118 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:58:02.391 id=119 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:58:03.822 id=120 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:25.254 id=121 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:58:25.729 id=122 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:26.152 id=123 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:26.489 id=124 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:26.960 id=125 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:58:27.461 [debug] handled notification client -> server textDocument/didChange in 512µs
+
+11:58:27.462 id=126 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:27.563 [debug] sent notification server -> client window/logMessage
+
+11:58:27.563 id=127 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:27.564 [debug] sent notification server -> client window/logMessage
+
+11:58:27.564 id=128 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:27.770 id=129 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:29.070 id=130 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:31.312 [debug] handled notification client -> server textDocument/didChange in 205µs
+
+11:58:31.583 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:31.584 id=131 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+11:58:31.690 id=132 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+11:58:31.692 id=133 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:58:31.892 id=134 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:38.028 id=135 [debug] handled request client -> server textDocument/hover in 1003ms
+
+11:58:38.105 [debug] handled notification client -> server textDocument/didChange in 410µs
+
+11:58:38.105 id=136 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+11:58:39.159 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:39.159 [debug] sent notification server -> client window/logMessage
+
+11:58:39.163 id=138 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:39.165 id=139 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:39.165 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:40.167 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:40.167 [debug] sent notification server -> client window/logMessage
+
+11:58:40.167 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:41.169 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:41.169 [debug] sent notification server -> client window/logMessage
+
+11:58:41.169 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:41.169 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:41.169 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:42.171 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:42.172 [debug] sent notification server -> client window/logMessage
+
+11:58:42.173 id=143 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:42.173 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:43.175 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:43.175 [debug] sent notification server -> client window/logMessage
+
+11:58:43.176 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:43.179 id=145 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:58:43.182 id=146 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:58:43.182 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:43.182 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:58:43.182 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:44.184 [error] ** (Protocol.UndefinedError) protocol Enumerable not implemented for :timeout of type Atom. This protocol is implemented for the following type(s): DBConnection.PrepareStream, DBConnection.Stream, Date.Range, Exqlite.Stream, File.Stream, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, Jason.OrderedObject, List, Map, MapSet, Range, Stream
+    (elixir 1.17.1) lib/enum.ex:1: Enumerable.impl_for!/1
+    (elixir 1.17.1) lib/enum.ex:166: Enumerable.reduce/3
+    (elixir 1.17.1) lib/enum.ex:4423: Enum.reject/2
+    (next_ls 0.23.1) lib/next_ls.ex:244: NextLS.handle_request/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:350: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:349: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+11:58:44.185 [debug] sent notification server -> client window/logMessage
+
+11:58:44.185 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:44.185 id=148 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:44.185 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:44.186 id=149 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:44.188 id=150 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:44.188 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:44.188 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:58:44.188 [debug] handled notification client -> server textDocument/didChange in 205µs
+
+11:58:44.189 id=151 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:44.189 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:58:44.191 id=152 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:44.192 id=153 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:44.192 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:44.192 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:44.193 [debug] handled notification client -> server textDocument/didChange in 409µs
+
+11:58:44.193 id=154 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:44.193 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:44.196 id=155 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:58:44.200 id=156 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+11:58:44.200 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:58:44.201 id=157 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:58:44.202 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+11:58:44.202 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+11:58:44.202 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:58:44.203 id=158 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:44.203 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+11:58:44.205 id=159 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:58:44.207 id=160 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:45.437 [debug] handled notification client -> server textDocument/didChange in 205µs
+
+11:58:45.439 id=161 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:46.111 [debug] handled notification client -> server textDocument/didChange in 205µs
+
+11:58:46.111 id=162 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:46.212 id=163 [debug] handled request client -> server textDocument/documentSymbol in 205µs
+
+11:58:46.870 id=164 [debug] handled request client -> server textDocument/documentSymbol in 409µs
+
+11:58:47.140 [debug] handled notification client -> server textDocument/didChange in 308µs
+
+11:58:47.141 id=165 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:58:48.900 [debug] handled notification client -> server textDocument/didChange in 409µs
+
+11:58:48.901 id=166 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:49.001 [debug] sent notification server -> client window/logMessage
+
+11:58:49.002 id=167 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:49.210 id=168 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+11:58:49.559 [debug] sent notification server -> client window/logMessage
+
+11:58:49.559 id=169 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:50.757 id=170 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:58:51.060 id=171 [debug] handled request client -> server textDocument/codeAction in 820µs
+
+11:58:51.655 id=172 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:53.660 id=173 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:58:54.370 [debug] handled notification client -> server textDocument/didChange in 512µs
+
+11:58:54.454 [debug] sent notification server -> client window/logMessage
+
+11:58:54.454 id=174 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:58:54.462 id=175 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:58:54.937 [debug] sent notification server -> client window/logMessage
+
+11:58:54.937 id=176 [debug] handled request client -> server textDocument/documentSymbol in 922µs
+
+11:59:00.928 id=177 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+11:59:02.188 [debug] handled notification client -> server textDocument/didChange in 716µs
+
+11:59:02.191 id=178 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+11:59:02.293 [debug] sent notification server -> client window/logMessage
+
+11:59:02.293 id=179 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:59:02.549 id=180 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:59:02.713 [debug] sent notification server -> client window/logMessage
+
+11:59:02.713 id=181 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+11:59:03.911 id=182 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+11:59:04.282 id=183 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+11:59:27.144 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:59:27.145 id=184 [debug] handled request client -> server textDocument/codeAction in 820µs
+
+11:59:27.246 [debug] handled notification client -> server textDocument/didChange in 410µs
+
+11:59:27.247 [debug] sent notification server -> client window/logMessage
+
+11:59:27.248 id=185 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:59:28.013 [debug] handled notification client -> server textDocument/didChange in 307µs
+
+11:59:28.014 id=186 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+11:59:28.115 id=187 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+11:59:28.321 id=188 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+11:59:28.471 id=189 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+12:04:11.868 [debug] handled notification client -> server textDocument/didClose in 73ms
+
+12:04:11.869 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+12:04:11.870 id=190 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:04:11.879 id=191 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:04:12.138 id=192 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:04:26.222 id=193 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:04:26.474 id=194 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:04:26.522 id=195 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+12:05:10.205 id=196 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:05:10.625 [debug] handled notification client -> server textDocument/didChange in 204µs
+
+12:05:10.627 id=197 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:05:10.729 id=198 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:05:10.732 id=199 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:05:13.269 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:05:13.269 [debug] sent notification server -> client window/logMessage
+
+12:05:13.578 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 717µs
+
+12:06:04.171 id=200 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:06:04.584 [debug] handled notification client -> server textDocument/didChange in 410µs
+
+12:06:04.586 id=201 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:04.686 id=202 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+12:06:04.704 id=203 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:06:06.596 id=204 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:06:06.596 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+12:06:11.700 id=205 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:06:12.040 id=206 [debug] handled request client -> server textDocument/documentSymbol in 15ms
+
+12:06:12.231 id=207 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:06:12.675 id=208 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:06:13.827 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:06:13.830 id=209 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:13.937 id=210 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:06:13.958 id=211 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+12:06:14.142 id=212 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:06:16.059 id=213 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:06:16.773 id=214 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:06:17.962 id=215 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:20.547 id=216 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:21.317 id=217 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:22.033 [debug] handled notification client -> server textDocument/didChange in 614µs
+
+12:06:22.036 id=218 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:06:22.138 id=219 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:06:22.140 id=220 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:06:23.112 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:06:23.112 [debug] sent notification server -> client window/logMessage
+
+12:06:23.513 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 3ms
+
+12:06:27.878 id=221 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:06:34.827 id=222 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:06:35.166 id=223 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:06:35.470 id=224 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:06:35.472 id=225 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:06:37.045 id=226 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:06:38.398 [debug] handled notification client -> server textDocument/didChange in 512µs
+
+12:06:38.401 id=227 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:06:38.506 id=228 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:06:39.664 id=229 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:06:40.118 id=230 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:40.387 id=231 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:40.655 id=232 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:41.339 id=233 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:42.020 id=234 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:44.705 id=235 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:06:45.215 id=236 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:06:45.751 id=237 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:06:46.977 id=238 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:06:48.341 id=239 [debug] handled request client -> server textDocument/codeAction in 716µs
+
+12:06:51.667 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:06:51.667 id=240 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:51.788 id=241 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:06:52.814 id=242 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:06:54.069 id=243 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:54.790 id=244 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:06:55.718 id=245 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:06:56.129 id=246 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:06:56.755 id=247 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:06:57.061 id=248 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:06:58.133 id=249 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:06:58.494 id=250 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:07:04.697 id=251 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:07:05.298 id=252 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:07:07.810 id=253 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:07:16.716 id=254 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:09:34.540 id=255 [debug] handled request client -> server textDocument/hover in 1003ms
+
+12:09:34.540 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:09:37.926 id=256 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:09:38.259 id=257 [debug] handled request client -> server textDocument/documentSymbol in 15ms
+
+12:09:38.970 id=258 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:13:13.382 id=259 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+12:13:13.639 id=260 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:13.689 id=261 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:13:16.589 id=262 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:13:17.594 id=263 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+12:13:17.963 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:13:17.963 id=264 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:13:18.070 id=265 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:13:18.526 id=266 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:19.479 id=267 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:13:19.783 id=268 [debug] handled request client -> server textDocument/codeAction in 820µs
+
+12:13:19.800 id=269 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:13:26.499 id=270 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:13:26.504 id=271 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:13:26.748 id=272 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:26.816 id=273 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:13:27.263 id=274 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:13:30.518 id=275 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:31.777 id=276 [debug] handled request client -> server textDocument/hover in 1003ms
+
+12:13:31.777 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:13:31.777 id=277 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:13:32.965 id=278 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:13:33.489 id=279 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:13:33.881 id=280 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:13:34.332 id=281 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:13:34.874 id=282 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:13:35.184 id=283 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:13:38.317 [debug] handled notification client -> server textDocument/didChange in 921µs
+
+12:13:38.317 id=284 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:38.423 id=285 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:13:41.118 id=286 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:42.450 id=287 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:44.773 id=288 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:13:45.395 id=289 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:45.682 id=290 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:46.054 [debug] handled notification client -> server textDocument/didChange in 922µs
+
+12:13:46.055 id=291 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+12:13:46.162 id=292 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:13:46.502 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:13:46.502 id=293 [debug] handled request client -> server textDocument/codeAction in 204µs
+
+12:13:46.607 id=294 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:13:52.508 id=295 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:53.132 id=296 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:53.575 id=297 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:13:54.718 id=298 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:13:55.469 id=299 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:13:56.138 id=300 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:16.502 id=301 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:17.969 id=302 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:17.969 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:17.970 id=303 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:18.150 id=304 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:15:19.284 id=305 [debug] handled request client -> server textDocument/hover in 1002ms
+
+12:15:19.285 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:19.285 [debug] handled notification client -> server textDocument/didChange in 614µs
+
+12:15:20.288 id=306 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:20.289 id=307 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:20.295 id=308 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:15:20.295 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:20.295 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:20.295 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:20.297 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:15:20.298 id=309 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:15:20.340 id=310 [debug] handled request client -> server textDocument/documentSymbol in 42ms
+
+12:15:20.553 id=311 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:15:21.174 id=312 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:21.506 id=313 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:22.166 id=314 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:15:22.634 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:22.636 id=315 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:22.741 id=316 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:15:23.512 id=317 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:24.078 id=318 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:25.529 id=319 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:27.384 id=320 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:27.384 id=321 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:27.384 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:15:27.385 [debug] handled notification client -> server $/cancelRequest in 717µs
+
+12:15:27.386 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:27.387 id=322 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:27.392 id=323 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:15:28.330 id=324 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:28.804 id=325 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:29.874 id=326 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:15:30.160 id=327 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:30.609 id=328 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:15:31.075 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:31.078 id=329 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:31.183 id=330 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:15:31.717 id=331 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:32.095 id=332 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:33.273 id=333 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:33.273 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:33.274 id=334 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:33.274 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:33.274 id=335 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:34.342 id=336 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:34.343 id=337 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:34.343 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:15:35.346 id=338 [debug] handled request client -> server textDocument/hover in 1002ms
+
+12:15:35.347 [debug] handled notification client -> server $/cancelRequest in 819µs
+
+12:15:35.347 id=339 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:15:35.347 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:35.347 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:15:35.349 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:36.352 id=340 [debug] handled request client -> server textDocument/hover in 1002ms
+
+12:15:36.352 id=341 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:36.360 id=342 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:15:36.360 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:15:36.425 id=343 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:36.944 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:15:36.945 id=344 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:15:37.050 id=345 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:15:37.996 id=346 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:39.434 id=347 [debug] handled request client -> server textDocument/hover in 1000ms
+
+12:15:40.783 id=348 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:41.667 id=349 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:15:43.433 id=350 [debug] handled request client -> server textDocument/hover in 1000ms
+
+12:15:43.438 id=351 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:15:43.438 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:44.050 id=352 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:15:44.297 id=353 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:15:44.349 id=354 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:15:47.172 id=355 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:15:47.445 id=356 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+12:15:47.475 id=357 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:15:49.204 id=358 [debug] handled request client -> server textDocument/codeAction in 204µs
+
+12:15:50.191 id=359 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:15:51.441 id=360 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:51.441 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:52.443 id=361 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:52.443 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:52.445 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:15:52.446 id=362 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:52.452 id=363 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:15:52.452 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:15:52.452 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:52.453 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:52.453 id=364 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:15:52.459 id=365 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:15:52.459 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:52.459 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:15:52.460 [debug] handled notification client -> server textDocument/didChange in 717µs
+
+12:15:52.461 id=366 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:52.464 id=367 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:15:53.466 id=368 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:15:53.466 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:15:53.468 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:15:53.468 id=369 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+12:15:53.472 id=370 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+12:15:54.475 id=371 [debug] handled request client -> server textDocument/hover in 1002ms
+
+12:15:55.149 [debug] handled notification client -> server textDocument/didChange in 410µs
+
+12:15:55.151 id=372 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:15:55.257 id=373 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+12:15:56.558 id=374 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:15:57.202 id=375 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:15:57.621 id=376 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:58.518 id=377 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:15:58.971 id=378 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:15:59.321 id=379 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:15:59.923 id=380 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+12:16:00.065 id=381 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:16:00.545 id=382 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:16:02.060 id=383 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:16:09.450 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+12:16:09.464 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:16:09.464 [debug] sent notification server -> client window/logMessage
+
+12:16:09.775 id=384 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:16:09.856 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 5ms
+
+12:16:13.739 id=385 [debug] handled request client -> server textDocument/documentSymbol in 14ms
+
+12:16:15.779 id=386 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+12:16:24.202 id=387 [debug] handled request client -> server textDocument/hover in 1200ms
+
+12:16:25.658 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1455ms
+
+12:16:25.658 [debug] handled notification client -> server $/cancelRequest in 307µs
+
+12:16:25.659 id=388 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:16:25.659 [debug] handled notification client -> server textDocument/didClose in 410µs
+
+12:16:35.074 id=389 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:17:01.198 id=390 [debug] handled request client -> server textDocument/codeAction in 4ms
+
+12:17:21.296 [debug] handled notification client -> server textDocument/didClose in 102µs
+
+12:17:21.392 [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+12:17:21.392 id=391 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:17:21.412 id=392 [debug] handled request client -> server textDocument/documentSymbol in 19ms
+
+12:17:21.681 id=393 [debug] handled request client -> server textDocument/documentSymbol in 18ms
+
+12:23:00.309 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 15ms
+
+12:24:30.005 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 15ms
+
+12:24:30.499 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 3ms
+
+12:24:31.013 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 17ms
+
+12:24:31.532 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 4ms
+
+12:24:32.282 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 3ms
+
+12:24:33.064 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 6ms
+
+12:41:21.490 id=394 [debug] handled request client -> server textDocument/codeAction in 22ms
+
+12:41:21.843 id=395 [debug] handled request client -> server textDocument/documentSymbol in 65ms
+
+12:41:21.850 id=396 [debug] handled request client -> server textDocument/codeAction in 6ms
+
+12:41:29.449 id=397 [debug] handled request client -> server textDocument/hover in 1013ms
+
+12:41:33.864 id=398 [debug] handled request client -> server textDocument/hover in 1003ms
+
+12:41:33.864 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:41:41.238 id=399 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:41:41.238 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:41:41.360 id=400 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:41:43.004 id=401 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:41:43.005 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+12:41:43.007 id=402 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:41:49.746 id=403 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:41:50.797 id=404 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:41:51.760 id=405 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:41:52.126 id=406 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:41:52.506 id=407 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:41:52.990 id=408 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:41:53.637 id=409 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:41:54.454 [debug] handled notification client -> server textDocument/didChange in 10ms
+
+12:41:54.454 id=410 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:41:54.562 id=411 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:41:54.569 id=412 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:41:54.786 id=413 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:41:55.241 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+12:41:55.241 id=414 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:41:55.346 id=415 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:41:55.351 id=416 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:42:00.297 id=417 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:00.665 id=418 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:42:01.085 id=419 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:42:01.848 id=420 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:42:02.840 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:42:02.840 id=421 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:42:02.959 id=422 [debug] handled request client -> server textDocument/documentSymbol in 23ms
+
+12:42:02.967 id=423 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:42:03.228 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+12:42:03.229 id=424 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:42:03.359 [debug] handled notification client -> server textDocument/didChange in 820µs
+
+12:42:03.369 id=425 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:42:03.517 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:42:03.584 id=426 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+12:42:03.707 id=427 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:42:03.715 id=428 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:42:05.284 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:42:05.284 id=429 [debug] handled request client -> server textDocument/codeAction in 205µs
+
+12:42:05.389 id=430 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:42:05.394 id=431 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+12:42:05.538 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:42:05.538 [debug] sent notification server -> client window/logMessage
+
+12:42:05.937 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 3ms
+
+12:42:11.510 id=432 [debug] handled request client -> server textDocument/codeAction in 23ms
+
+12:42:12.234 id=433 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+12:42:13.117 id=434 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:42:14.418 id=435 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:15.609 id=436 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:16.260 id=437 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:42:16.606 id=438 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:17.711 id=439 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+12:42:18.662 id=440 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:42:19.228 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:42:19.233 id=441 [debug] handled request client -> server textDocument/codeAction in 4ms
+
+12:42:19.314 id=442 [debug] handled request client -> server textDocument/documentSymbol in 36ms
+
+12:42:19.327 id=443 [debug] handled request client -> server textDocument/documentSymbol in 13ms
+
+12:42:20.143 [debug] handled notification client -> server textDocument/didChange in 67ms
+
+12:42:20.216 id=444 [debug] handled request client -> server textDocument/documentSymbol in 64ms
+
+12:42:20.256 id=445 [debug] handled request client -> server textDocument/documentSymbol in 39ms
+
+12:42:20.281 id=446 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:21.416 id=447 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+12:42:21.837 [debug] handled notification client -> server textDocument/didChange in 36ms
+
+12:42:21.857 id=448 [debug] handled request client -> server textDocument/codeAction in 19ms
+
+12:42:21.867 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+12:42:21.992 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:42:22.055 id=449 [debug] handled request client -> server textDocument/documentSymbol in 62ms
+
+12:42:22.055 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:42:22.101 id=450 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:42:22.224 id=451 [debug] handled request client -> server textDocument/documentSymbol in 21ms
+
+12:42:22.239 id=452 [debug] handled request client -> server textDocument/documentSymbol in 15ms
+
+12:42:22.386 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 34ms
+
+12:42:22.949 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:42:22.949 [debug] sent notification server -> client window/logMessage
+
+12:42:52.391 id=453 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:43:19.185 id=454 [debug] handled request client -> server textDocument/hover in 1005ms
+
+12:43:19.185 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+12:43:22.066 id=455 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:45:01.836 id=456 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:45:03.109 [debug] handled notification client -> server textDocument/didChange in 819µs
+
+12:45:03.109 id=457 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:45:03.215 id=458 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:45:03.239 id=459 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:45:03.482 id=460 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:45:03.920 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:45:03.920 id=461 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:45:04.022 id=462 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:45:04.051 id=463 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:45:04.659 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:45:04.659 [debug] sent notification server -> client window/logMessage
+
+12:45:04.996 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+12:45:09.645 id=464 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:45:12.403 id=465 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+12:45:12.784 id=466 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:45:13.067 id=467 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+12:45:13.549 id=468 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+12:45:13.996 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:45:14.000 id=469 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:45:14.107 id=470 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:45:14.118 id=471 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:45:14.315 id=472 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:45:17.669 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+12:45:17.670 id=473 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:45:17.776 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:45:17.782 id=474 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:45:18.005 id=475 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+12:45:18.111 id=476 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+12:45:18.120 id=477 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+12:45:18.722 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+12:45:18.722 id=478 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+12:45:18.832 id=479 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+12:45:18.840 id=480 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+12:45:20.231 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+12:45:20.231 [debug] sent notification server -> client window/logMessage
+
+12:45:20.513 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 614µs
+
+12:45:26.126 id=481 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+12:45:53.052 id=482 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:45:53.297 id=483 [debug] handled request client -> server textDocument/codeAction in 3ms
+
+12:45:53.321 id=484 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+12:46:04.534 id=485 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:46:04.796 id=486 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:46:04.849 id=487 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+12:46:08.291 id=488 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:46:08.544 id=489 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:46:08.590 id=490 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+12:46:10.334 id=491 [debug] handled request client -> server textDocument/hover in 1001ms
+
+12:46:32.620 [debug] handled notification client -> server textDocument/didClose in 1ms
+
+12:46:32.677 [debug] handled notification client -> server textDocument/didOpen in 3ms
+
+12:46:32.678 id=492 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+12:46:32.687 id=493 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+12:46:32.965 id=494 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+12:46:36.330 [debug] handled notification client -> server textDocument/didClose in 205µs
+
+12:46:36.410 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+12:46:36.412 id=495 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+12:46:36.429 id=496 [debug] handled request client -> server textDocument/documentSymbol in 15ms
+
+12:46:36.684 id=497 [debug] handled request client -> server textDocument/documentSymbol in 3ms
+
+12:46:53.266 [debug] handled notification client -> server textDocument/didClose in 102µs
+
+12:46:53.303 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+12:46:53.306 id=498 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+12:46:53.307 id=499 [debug] handled request client -> server textDocument/documentSymbol in 615µs
+
+12:46:53.622 id=500 [debug] handled request client -> server textDocument/documentSymbol in 13ms
+
+12:46:55.609 id=501 [debug] handled request client -> server textDocument/hover in 1006ms
+
+12:46:55.610 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+12:47:07.985 id=502 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+12:47:09.850 id=503 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:47:10.464 id=504 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+12:52:30.721 id=505 [debug] handled request client -> server textDocument/codeAction in 615µs
