@@ -2614,3 +2614,5 @@ This will trigger a full recompilation in order to re-index your codebase.
 13:42:34.194 id=749 [debug] handled request client -> server textDocument/codeAction in 1ms
 
 13:43:48.735 id=750 [debug] handled request client -> server textDocument/hover in 1017ms
+
+13:49:01.750 id=751 [debug] handled request client -> server textDocument/hover in 1005ms
