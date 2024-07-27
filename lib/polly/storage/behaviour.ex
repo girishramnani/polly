@@ -9,4 +9,7 @@ defmodule Polly.StorageBehaviour do
   @callback get_poll_votes!(binary()) :: integer()
   @callback has_option?(binary(), binary()) :: boolean()
   @callback safe_lookup_element(binary()) :: integer()
+  @callback update_poll(binary(), Poll.t()) :: :ok | {:error, atom()}
+  # @callback replace_option_votes(Poll.t(), boolean()) :: Poll.t()
+
 end

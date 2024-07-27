@@ -99,8 +99,8 @@ defmodule PollyWeb.PollLive.FormComponent do
     save_poll(socket, socket.assigns.action, poll_params)
   end
 
+
   defp save_poll(socket, :new, poll_params) do
-    # add the creator_username to the poll params so it can be added to the Poll
     poll_params
     |> Map.merge(%{"creator_username" => socket.assigns[:current_user]})
     |> Polls.create_poll()
@@ -117,6 +117,23 @@ defmodule PollyWeb.PollLive.FormComponent do
         {:noreply, assign_form(socket, changeset)}
     end
   end
+
+  defp save_poll(socket, :edit, poll_params) do
+    Polly.Polls.update_poll(socket.assigns.poll.id, poll_params)
+    |> case do
+      {:ok, poll} ->
+        notify_parent({:saved, poll})
+
+        {:noreply,
+         socket
+         |> put_flash(:info, "Poll updated successfully")
+         |> push_patch(to: socket.assigns.patch)}
+
+      {:error, changeset} ->
+        {:noreply, assign_form(socket, changeset)}
+    end
+  end
+
 
   defp assign_form(socket, changeset) do
     socket

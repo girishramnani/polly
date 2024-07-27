@@ -1,0 +1,36 @@
+.button-link {
+    display: inline-flex;
+    text-decoration: none;
+  }
+
+  .edit-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .edit-button:hover {
+    background-color: #357abd;
+  }
+
+  .text-blue-600 {
+    color: #1d4ed8;
+  }
+
+  .text-blue-600:hover {
+    color: #1e40af;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

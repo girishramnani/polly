@@ -20,6 +20,7 @@ defmodule PollyWeb.Router do
     live_session :require_authenticated_user,
       on_mount: [{PollyWeb.UserAuth, :ensure_authenticated}] do
       live "/polls/new", PollLive.Index, :new
+      live "/polls/:id/edit", PollLive.Edit, :edit
     end
 
     live_session :current_user,
@@ -27,6 +28,7 @@ defmodule PollyWeb.Router do
       live "/", PollLive.Index, :index
       live "/polls/:id", PollLive.Show, :show
       live "/polls/:id/result", PollLive.Show, :show_result
+      live "/polls/:id/edit", PollLive.Edit, :edit
     end
 
     live_session :redirect_if_user_is_authenticated,
