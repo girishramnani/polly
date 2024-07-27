@@ -84,4 +84,10 @@ defmodule Polly.PollsManager do
   def change_poll(%Poll{} = poll, attrs \\ %{}) do
     Poll.changeset(poll, attrs)
   end
+
+
+  @spec update_poll(Poll.t()) :: :ok | {:error, any()}
+  def update_poll(%Poll{} = poll) do
+    # Your ETS or other storage logic to update the poll
+  end
 end
