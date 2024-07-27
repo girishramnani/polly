@@ -19,11 +19,11 @@ defmodule PollyWeb.PollLive.Edit do
   @impl true
   def handle_event("save", %{"poll" => poll_params}, socket) do
     case Polls.update_poll(socket.assigns.poll, poll_params) do
-      {:ok, poll} ->
+      {:ok, _poll} ->
         {:noreply,
          socket
          |> put_flash(:info, "Poll updated successfully")
-         |> push_redirect(to: Routes.poll_index_path(socket, :index))}
+         |> push_redirect(to: Routes.poll_path(socket, :index))}  # Adjusted to Routes.poll_path/2
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign(socket, :changeset, changeset)}
@@ -31,6 +31,9 @@ defmodule PollyWeb.PollLive.Edit do
   end
 
   def render(assigns) do
+    title_value = Ecto.Changeset.get_field(assigns.changeset, :title)
+    description_value = Ecto.Changeset.get_field(assigns.changeset, :description)
+
     ~H"""
     <.header>
       Edit Poll
@@ -39,25 +42,22 @@ defmodule PollyWeb.PollLive.Edit do
     <.simple_form
       for={@changeset}
       id="poll-form"
-      phx-target={@myself}
       phx-submit="save"
     >
-      <.input field={@changeset[:title]} type="text" label="Title" />
-      <.input field={@changeset[:description]} type="textarea" label="Description" />
-
-      <fieldset>
-        <legend>Options</legend>
-        <%= hidden_input(@changeset, :options, value: "[]") %>
-        <%= for f_option <- inputs_for(@changeset, :options) do %>
-          <div class="m-4">
-            <%= hidden_inputs_for(f_option) %>
-            <.input field={f_option[:text]} type="text" />
-          </div>
-        <% end %>
-        <.button id="add-option" type="button" phx-click="add-option" phx-target={@myself}>
-          Add
-        </.button>
-      </fieldset>
+      <.input
+        field={@changeset}
+        name="title"
+        type="text"
+        label="Title"
+        value={title_value}
+      />
+      <.input
+        field={@changeset}
+        name="description"
+        type="textarea"
+        label="Description"
+        value={description_value}
+      />
 
       <:actions>
         <.button phx-disable-with="Saving...">Save Poll</.button>
