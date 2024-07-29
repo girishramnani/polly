@@ -21,7 +21,7 @@ defmodule PollyWeb.PollLive.Show do
     {:noreply, apply_action(params, socket.assigns.live_action, socket)}
   end
 
-  defp apply_action(%{"id" => id}, :show, socket) do
+  def apply_action(%{"id" => id}, :show, socket) do
     poll = Polls.get_poll(id)
 
     if is_nil(poll) do
@@ -42,7 +42,7 @@ defmodule PollyWeb.PollLive.Show do
     end
   end
 
-  defp apply_action(%{"id" => id}, :show_result, socket) do
+  def apply_action(%{"id" => id}, :show_result, socket) do
     poll = Polls.get_poll(id, true)
 
     if is_nil(poll) do

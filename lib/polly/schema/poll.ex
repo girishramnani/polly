@@ -20,6 +20,7 @@ defmodule Polly.Schema.Poll do
     embeds_many(:options, Option, on_replace: :delete)
   end
 
+  @spec changeset(Polly.Schema.Poll.t()) :: Ecto.Changeset.t()
   def changeset(%Poll{} = poll, attrs \\ %{}) do
     poll
     |> cast(attrs, [:title, :total_votes, :creator_username, :description])
@@ -45,5 +46,10 @@ defmodule Polly.Schema.Poll do
     changeset
   end
 
+  # def changeset(poll, attrs) do
+  #   poll
+  #   |> cast(attrs, [:title, :description])
+  #   |> validate_required([:title, :description])
+  # end
   # defstruct title: nil, options: [], total_votes: 0, created_at: nil
 end

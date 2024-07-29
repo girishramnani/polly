@@ -56,7 +56,6 @@ defmodule Polly.ETSStorage do
     :ets.lookup_element(@polls_votes, poll_id, 2)
   end
 
-  @impl Polly.StorageBehaviour
   def replace_option_votes(poll, true) do
     updated_options =
       Enum.map(poll.options, fn option ->
@@ -65,7 +64,6 @@ defmodule Polly.ETSStorage do
     Map.replace(poll, :options, updated_options)
   end
 
-  @impl Polly.StorageBehaviour
   def replace_option_votes(poll, false), do: poll
 
   @impl Polly.StorageBehaviour
@@ -82,6 +80,17 @@ defmodule Polly.ETSStorage do
       :ets.lookup_element(@polls_options_votes, option_id, 2)
     rescue
       ArgumentError -> 0
+    end
+  end
+
+  @impl Polly.StorageBehaviour
+  @spec update_poll(binary(), Poll.t()) :: :ok | {:error, atom()}
+  def update_poll(poll_id, %Poll{} = updated_poll) do
+    if :ets.lookup(@polls, poll_id) != [] do
+      :ets.insert(@polls, {poll_id, updated_poll})
+      :ok
+    else
+      {:error, :poll_not_found}
     end
   end
 end

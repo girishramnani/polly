@@ -3,6 +3,6 @@ defmodule PollyWeb.LoginLive.Index do
 
   def mount(_params, _session, socket) do
     form = to_form(%{"username" => nil})
-    {:ok, assign(socket, form: form)}
+    {:ok, assign(socket, form: form, polls: [])}
   end
 end
