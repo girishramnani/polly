@@ -3,6 +3,7 @@ defmodule PollyWeb.PollLive.Edit do
 
   alias Polly.Polls
   alias Polly.Schema.Poll
+  alias Polly.Schema.Option
 
   @impl true
   def mount(_params, _session, socket) do
@@ -13,52 +14,84 @@ defmodule PollyWeb.PollLive.Edit do
   def handle_params(%{"id" => id}, _, socket) do
     poll = Polls.get_poll!(id)
     changeset = Polls.change_poll(poll)
-    {:noreply, assign(socket, poll: poll, changeset: changeset)}
+    {:noreply, assign(socket, poll: poll, changeset: changeset, form: to_form(changeset))}
   end
 
   @impl true
   def handle_event("save", %{"poll" => poll_params}, socket) do
     case Polls.update_poll(socket.assigns.poll, poll_params) do
-      {:ok, _poll} ->
-        {:noreply,
-         socket
-         |> put_flash(:info, "Poll updated successfully")
-         |> push_redirect(to: Routes.poll_path(socket, :index))}  # Adjusted to Routes.poll_path/2
+      {:ok, poll} ->
+        socket =
+          socket
+          |> put_flash(:info, "Poll updated successfully")
+          |> assign(:poll, poll)
+          |> push_redirect(to: Routes.poll_index_path(socket, :index))
+
+        {:noreply, socket}
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        {:noreply, assign(socket, :changeset, changeset)}
+        {:noreply, assign(socket, changeset: changeset, form: to_form(changeset))}
     end
   end
 
-  def render(assigns) do
-    title_value = Ecto.Changeset.get_field(assigns.changeset, :title)
-    description_value = Ecto.Changeset.get_field(assigns.changeset, :description)
+  @impl true
+  def handle_event("add-option", _, socket) do
+    socket =
+      update(socket, :changeset, fn changeset ->
+        existing = Ecto.Changeset.get_field(changeset, :options, [])
+        new_option_changeset = %Option{} |> Ecto.Changeset.change()
+        new_option_changeset = Ecto.Changeset.put_change(new_option_changeset, :text, "New Option Text")
+        Ecto.Changeset.put_embed(changeset, :options, existing ++ [new_option_changeset])
+      end)
 
+    socket = assign(socket, :form, to_form(socket.assigns.changeset))
+    {:noreply, socket}
+  end
+
+  @impl true
+  def render(assigns) do
     ~H"""
     <.header>
       Edit Poll
     </.header>
 
     <.simple_form
-      for={@changeset}
+      for={@form}
       id="poll-form"
       phx-submit="save"
     >
       <.input
-        field={@changeset}
+        field={@form[:title]}
         name="title"
         type="text"
         label="Title"
-        value={title_value}
+        value={Phoenix.HTML.Form.input_value(@form, :title)}
       />
       <.input
-        field={@changeset}
+        field={@form[:description]}
         name="description"
         type="textarea"
         label="Description"
-        value={description_value}
+        value={Phoenix.HTML.Form.input_value(@form, :description)}
       />
 
+      <fieldset>
+        <legend>Options</legend>
+        <%= hidden_input(@form, :options, value: "[]") %>
+        <%= for option_form <- inputs_for(@form, :options) do %>
+          <div class="m-4">
+            <%= hidden_inputs_for(option_form) %>
+            <input
+              type="text"
+              name={option_form[:text].name}
+              value={Phoenix.HTML.Form.input_value(option_form, :text)}
+            />
+          </div>
+        <% end %>
+        <.button id="add-option" type="button" phx-click="add-option">
+          Add
+        </.button>
+      </fieldset>
       <:actions>
         <.button phx-disable-with="Saving...">Save Poll</.button>
       </:actions>
