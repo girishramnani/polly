@@ -9,14 +9,22 @@ defmodule PollyWeb.PollLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    # we subscribe to a topic for the index page, this way
-    # when someone votes we could update this page
     PollyWeb.Endpoint.subscribe(@topic)
-
-    # Though of using streams here but as per chris Mccord's
-    # recent comment streams dont support a full update i.e.
-    # cannot replace a stream with a new stream
     {:ok, assign(socket, :polls, Polls.list_polls())}
+  end
+
+  @impl true
+  def handle_params(%{"id" => id}, _url, socket) do
+    case Polls.get_poll(id) do
+      %Poll{} = poll ->
+        {:noreply, assign(socket, poll: poll)}
+
+      _ ->
+        {:noreply,
+          socket
+          |> put_flash(:error, "Poll not found")
+          |> push_redirect(to: socket.assigns.redirect_path || "/polls")}
+    end
   end
 
   @impl true
@@ -37,25 +45,23 @@ defmodule PollyWeb.PollLive.Index do
   end
 
   defp apply_action(socket, :edit, %{"id" => id}) do
-    poll = Polly.PollsManager.get_poll!(id)
-    changeset = Polly.PollsManager.change_poll(poll)
+    poll = Polls.get_poll!(id)
+    changeset = Polls.change_poll(poll)
+
     socket
     |> assign(:page_title, "Edit Poll")
     |> assign(:poll, poll)
     |> assign(:changeset, changeset)
+    |> assign(:form, to_form(changeset))
   end
-
 
   @impl true
   def handle_info(%{topic: @topic, payload: _state}, socket) do
-    # we basically update the whole list of polls
     {:noreply, update(socket, :polls, fn _polls -> Polls.list_polls() end)}
   end
 
   @impl true
   def handle_info({PollyWeb.PollLive.FormComponent, {:saved, poll}}, socket) do
-    # broadcast a new poll event so other users can see updated poll list
-    # in real time
     PollyWeb.Endpoint.broadcast(@topic, @new_poll_event, poll)
     {:noreply, update(socket, :polls, fn _polls -> Polls.list_polls() end)}
   end
@@ -74,11 +80,14 @@ defmodule PollyWeb.PollLive.Index do
 
     <.table id="polls" rows={@polls} row_click={fn {_id, poll} -> JS.navigate(~p"/polls/#{poll}") end}>
       <:col :let={{_id, poll}} label="Title"><%= poll.title %></:col>
+
       <:col :let={{_id, poll}} label="Total Votes"><%= poll.total_votes %></:col>
+
       <:action :let={{_id, poll}}>
         <.link navigate={~p"/polls/#{poll}/edit"}>
           <.button>Edit</.button>
         </.link>
+
         <div class="sr-only">
           <.link navigate={~p"/polls/#{poll}"}>Show</.link>
         </div>
@@ -97,5 +106,4 @@ defmodule PollyWeb.PollLive.Index do
     </.modal>
     """
   end
-
 end

@@ -22,16 +22,15 @@ defmodule PollyWeb.PollLive.FormComponent do
       >
         <.input field={@form[:title]} type="text" label="Title" />
         <.input field={@form[:description]} type="textarea" label="Description" />
-
         <fieldset>
           <legend>Options</legend>
-          <%= hidden_input(@form, :options, value: "[]") %>
+           <%= hidden_input(@form, :options, value: "[]") %>
           <%= for f_option <- inputs_for(@form, :options) do %>
             <div class="m-4">
-              <%= hidden_inputs_for(f_option) %>
-              <.input field={f_option[:text]} type="text" />
+              <%= hidden_inputs_for(f_option) %> <.input field={f_option[:text]} type="text" />
             </div>
           <% end %>
+
           <.button id="add-option" type="button" phx-click="add-option" phx-target={@myself}>
             Add
           </.button>
@@ -99,7 +98,6 @@ defmodule PollyWeb.PollLive.FormComponent do
     save_poll(socket, socket.assigns.action, poll_params)
   end
 
-
   defp save_poll(socket, :new, poll_params) do
     poll_params
     |> Map.merge(%{"creator_username" => socket.assigns[:current_user]})
@@ -133,7 +131,6 @@ defmodule PollyWeb.PollLive.FormComponent do
         {:noreply, assign_form(socket, changeset)}
     end
   end
-
 
   defp assign_form(socket, changeset) do
     socket

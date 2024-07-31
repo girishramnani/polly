@@ -122,5 +122,4 @@ defmodule Polly.PollsManagerTest do
       assert changeset.errors[:title] != nil
     end
   end
-
 end

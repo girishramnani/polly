@@ -9,8 +9,21 @@ defmodule Polly.ETSStorage do
   @impl Polly.StorageBehaviour
   def init() do
     :ets.new(@polls, [:public, :named_table, write_concurrency: true, read_concurrency: true])
-    :ets.new(@polls_votes, [:public, :named_table, write_concurrency: true, read_concurrency: true])
-    :ets.new(@polls_options_votes, [:public, :named_table, write_concurrency: true, read_concurrency: true])
+
+    :ets.new(@polls_votes, [
+      :public,
+      :named_table,
+      write_concurrency: true,
+      read_concurrency: true
+    ])
+
+    :ets.new(@polls_options_votes, [
+      :public,
+      :named_table,
+      write_concurrency: true,
+      read_concurrency: true
+    ])
+
     :ok
   end
 
@@ -46,14 +59,23 @@ defmodule Polly.ETSStorage do
 
   @impl Polly.StorageBehaviour
   def get_poll!(poll_id, with_option_votes \\ false) do
-    :ets.lookup_element(@polls, poll_id, 2)
-    |> Map.replace(:total_votes, get_poll_votes!(poll_id))
-    |> replace_option_votes(with_option_votes)
+    case :ets.lookup(@polls, poll_id) do
+      [{^poll_id, poll}] ->
+        poll
+        |> Map.replace(:total_votes, get_poll_votes!(poll_id))
+        |> replace_option_votes(with_option_votes)
+
+      [] ->
+        raise ArgumentError, message: "Poll with ID #{poll_id} not found"
+    end
   end
 
   @impl Polly.StorageBehaviour
   def get_poll_votes!(poll_id) do
-    :ets.lookup_element(@polls_votes, poll_id, 2)
+    case :ets.lookup(@polls_votes, poll_id) do
+      [{^poll_id, votes}] -> votes
+      [] -> 0
+    end
   end
 
   def replace_option_votes(poll, true) do
@@ -61,6 +83,7 @@ defmodule Polly.ETSStorage do
       Enum.map(poll.options, fn option ->
         Map.replace(option, :votes, safe_lookup_element(option.id))
       end)
+
     Map.replace(poll, :options, updated_options)
   end
 
@@ -92,5 +115,16 @@ defmodule Polly.ETSStorage do
     else
       {:error, :poll_not_found}
     end
+  end
+
+  def poll_exists?(poll_id) do
+    case :ets.lookup(@polls, poll_id) do
+      [{^poll_id, _poll}] -> true
+      _ -> false
+    end
+  end
+
+  def list_all_polls do
+    :ets.tab2list(@polls)
   end
 end

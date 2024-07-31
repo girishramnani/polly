@@ -46,10 +46,9 @@ defmodule Polly.Schema.Poll do
     changeset
   end
 
-  # def changeset(poll, attrs) do
-  #   poll
-  #   |> cast(attrs, [:title, :description])
-  #   |> validate_required([:title, :description])
-  # end
-  # defstruct title: nil, options: [], total_votes: 0, created_at: nil
+  @spec has_option?(t(), binary()) :: boolean()
+  def has_option?(%Poll{options: options}, option_id) do
+    Enum.any?(options, fn option -> option.id == option_id end)
+  end
+
 end

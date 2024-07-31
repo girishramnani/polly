@@ -2,7 +2,7 @@ defmodule Polly.Polls do
   @moduledoc """
   This module holds functions related to CRUD operations for Polls
   """
-  alias Polly.Schema.Poll
+  alias Polly.Schema.{Poll}
 
   @spec list_polls() :: [Poll.t()]
   def list_polls() do
@@ -19,6 +19,15 @@ defmodule Polly.Polls do
     end
   end
 
+  def has_option?(poll_id, option_id) do
+    poll_id
+    |> Polly.PollsManager.get_poll!(false)
+    |> Map.fetch!(:options)
+    |> Enum.any?(fn option ->
+      option.id == option_id
+    end)
+  end
+
   @spec get_poll!(binary()) :: Poll.t()
   def get_poll!(id) do
     Polly.PollsManager.get_poll_simple!(id)
@@ -30,6 +39,20 @@ defmodule Polly.Polls do
     |> Ecto.Changeset.apply_action(:insert)
     |> do_create_poll()
   end
+
+  def create_poll(params) do
+  Poll.changeset(%Poll{},params)
+  |> Ecto.Changeset.apply_action(:insert)
+  |> case do
+    {:ok, poll} ->
+      :ets.insert(:polls, {poll.id, poll})
+      {:ok, poll}
+
+    {:error, changeset} ->
+      {:error, changeset}
+  end
+end
+
 
   defp do_create_poll({:ok, %Poll{} = poll}) do
     :ok = Polly.PollsManager.add_poll(poll)

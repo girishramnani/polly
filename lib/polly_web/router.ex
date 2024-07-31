@@ -1,5 +1,6 @@
 defmodule PollyWeb.Router do
   use PollyWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -16,6 +17,8 @@ defmodule PollyWeb.Router do
 
   scope "/", PollyWeb do
     pipe_through :browser
+    live "/polls", PollLive.Index, :index
+    live "/polls/:id/edit", PollLive.Edit, :edit
 
     live_session :require_authenticated_user,
       on_mount: [{PollyWeb.UserAuth, :ensure_authenticated}] do
@@ -25,6 +28,7 @@ defmodule PollyWeb.Router do
 
     live_session :current_user,
       on_mount: [{PollyWeb.UserAuth, :mount_current_user}] do
+      live "/polls/new", PollLive.Index, :new
       live "/", PollLive.Index, :index
       live "/polls/:id", PollLive.Show, :show
       live "/polls/:id/result", PollLive.Show, :show_result
