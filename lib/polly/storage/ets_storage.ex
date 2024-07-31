@@ -65,8 +65,7 @@ defmodule Polly.ETSStorage do
         |> Map.replace(:total_votes, get_poll_votes!(poll_id))
         |> replace_option_votes(with_option_votes)
 
-      [] ->
-        raise ArgumentError, message: "Poll with ID #{poll_id} not found"
+      [] -> nil
     end
   end
 

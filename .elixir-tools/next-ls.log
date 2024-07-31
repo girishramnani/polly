@@ -39273,3 +39273,444 @@ This will trigger a full recompilation in order to re-index your codebase.
 18:35:32.742 id=13 [debug] handled request client -> server textDocument/codeAction in 307µs
 
 18:35:32.757 id=14 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+18:46:19.631 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 46ms
+
+18:57:07.271 [debug] handled notification client -> server textDocument/didOpen in 308µs
+
+18:57:07.276 id=15 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+18:57:07.284 id=16 [debug] handled request client -> server textDocument/documentSymbol in 512µs
+
+18:57:07.578 id=17 [debug] handled request client -> server textDocument/documentSymbol in 614µs
+
+19:09:34.075 [debug] handled notification client -> server textDocument/didClose in 12ms
+
+19:10:23.959 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 614µs
+
+19:16:04.361 id=18 [debug] handled request client -> server shutdown in 6ms
+
+19:17:46.760 [info] Loading 39 CA(s) from :otp store
+
+19:17:47.909 id=0 [debug] handled request client -> server initialize in 646ms
+
+19:17:47.960 [debug] sent notification server -> client window/logMessage
+
+19:17:47.981 [debug] NextLS v0.23.1 has initialized!
+
+19:17:47.981 [debug] sent notification server -> client window/logMessage
+
+19:17:47.981 [debug] Log file located at c:/Gaurav/Projects/polly/.elixir-tools/next-ls.log
+
+19:17:47.998 [debug] sent notification server -> client window/logMessage
+
+19:17:47.998 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+19:17:47.998 id=66 [debug] sent request server -> client client/registerCapability
+
+19:18:04.039 [debug] sent notification server -> client window/logMessage
+
+19:18:04.039 [debug] Booting runtimes...
+
+19:18:04.080 id=37 [debug] sent request server -> client window/workDoneProgress/create
+
+19:18:04.125 [debug] sent notification server -> client $/progress
+
+19:18:04.227 [debug] sent notification server -> client window/logMessage
+
+19:18:04.227 [info] Beginning DB migration...
+
+19:18:04.263 [debug] sent notification server -> client window/logMessage
+
+19:18:04.263 [info] Database is on the latest version: 7
+
+19:18:04.263 [debug] sent notification server -> client window/logMessage
+
+19:18:04.263 [info] Finished DB migration...
+
+19:18:04.295 [error] ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, NextLS.Runtime, {:badarg, [{NextLS.Runtime, :init, 1, [file: ~c"lib/next_ls/runtime.ex", line: 135, error_info: %{cause: {1, :binary, :type, nil}, function: :format_bs_fail, module: :erl_erts_errors}]}, {:gen_server, :init_it, 2, [file: ~c"gen_server.erl", line: 2057]}, {:gen_server, :init_it, 6, [file: ~c"gen_server.erl", line: 2012]}, {:proc_lib, :init_p_do_apply, 3, [file: ~c"proc_lib.erl", line: 329]}]}}}}
+    (next_ls 0.23.1) lib/next_ls.ex:899: anonymous fn/5 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/enum.ex:2531: Enum."-reduce/3-lists^foldl/2-0-"/3
+    (next_ls 0.23.1) lib/next_ls.ex:894: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+19:18:04.295 [debug] sent notification server -> client window/logMessage
+
+19:18:04.312 [debug] handled notification client -> server textDocument/didOpen in 16ms
+
+19:18:04.442 id=1 [debug] handled request client -> server textDocument/documentSymbol in 130ms
+
+19:18:04.577 id=2 [debug] handled request client -> server textDocument/codeAction in 136ms
+
+19:18:04.580 id=3 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+19:18:04.599 [debug] handled notification client -> server $/cancelRequest in 13ms
+
+19:18:04.599 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+19:18:04.599 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+19:18:04.607 id=4 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+19:18:04.607 id=5 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+19:18:04.617 id=6 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+19:18:06.317 id=7 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:18:10.862 id=8 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+19:18:12.588 id=9 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:18:12.887 id=10 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:18:14.495 id=11 [debug] handled request client -> server textDocument/hover in 1033ms
+
+19:18:14.495 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+19:18:15.509 id=12 [debug] handled request client -> server textDocument/hover in 1010ms
+
+19:18:15.509 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+19:18:22.310 id=13 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+19:18:22.595 id=14 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+19:18:25.892 id=15 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+19:18:51.005 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+19:18:51.018 id=16 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+19:18:51.026 id=17 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:18:51.245 id=18 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:18:51.272 id=19 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+19:18:52.450 id=20 [debug] handled request client -> server textDocument/hover in 1005ms
+
+19:18:52.450 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+19:18:52.451 id=21 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+19:19:00.903 id=22 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:19:01.414 id=23 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:19:07.143 id=24 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+19:19:07.359 id=25 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:19:07.425 id=26 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+19:19:07.649 id=27 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+19:19:08.233 id=28 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:19:21.047 id=29 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:19:21.337 id=30 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:19:21.342 id=31 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+19:19:21.904 id=32 [debug] handled request client -> server textDocument/codeAction in 307µs
+
+19:20:52.609 id=33 [debug] handled request client -> server textDocument/codeAction in 921µs
+
+19:20:53.281 id=34 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+19:20:53.609 id=35 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+19:20:53.788 id=36 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:20:54.258 id=37 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:20:55.007 [debug] handled notification client -> server textDocument/didChange in 29ms
+
+19:20:55.016 id=38 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+19:20:55.141 id=39 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+19:20:55.368 id=40 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:20:55.412 id=41 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+19:20:59.665 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:20:59.700 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:20:59.700 [debug] sent notification server -> client window/logMessage
+
+19:20:59.932 id=42 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:20:59.945 id=43 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+19:20:59.974 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 15ms
+
+19:21:05.146 id=44 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+19:21:08.806 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:21:08.832 id=45 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:21:09.295 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:21:09.297 id=46 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:21:09.428 id=47 [debug] handled request client -> server textDocument/documentSymbol in 12ms
+
+19:21:13.208 id=48 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:21:15.534 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:21:15.534 id=49 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:21:15.637 id=50 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+19:21:17.059 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+19:21:17.064 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:21:17.064 [debug] sent notification server -> client window/logMessage
+
+19:21:17.296 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 512µs
+
+19:21:17.336 id=51 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+19:21:20.297 id=52 [debug] handled request client -> server textDocument/documentSymbol in 5ms
+
+19:21:24.349 id=53 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+19:21:24.590 id=54 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:21:24.595 id=55 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+19:21:24.902 id=56 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:21:25.378 id=57 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:21:26.029 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:21:26.062 id=58 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:21:26.145 [debug] sent notification server -> client window/logMessage
+
+19:21:26.145 id=59 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:21:26.181 [debug] sent notification server -> client window/logMessage
+
+19:21:26.181 id=60 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+19:21:29.197 id=61 [debug] handled request client -> server textDocument/codeAction in 922µs
+
+19:21:34.173 id=62 [debug] handled request client -> server textDocument/codeAction in 4ms
+
+19:21:37.293 id=63 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:21:37.881 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:21:37.881 id=64 [debug] handled request client -> server textDocument/codeAction in 308µs
+
+19:21:38.044 id=65 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:21:38.414 id=66 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:21:38.844 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:21:38.844 [debug] sent notification server -> client window/logMessage
+
+19:21:39.124 id=67 [debug] handled request client -> server textDocument/documentSymbol in 12ms
+
+19:21:39.211 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 8ms
+
+19:21:44.564 id=68 [debug] handled request client -> server textDocument/hover in 1006ms
+
+19:21:44.564 [debug] handled notification client -> server $/cancelRequest in 205µs
+
+19:26:25.610 id=69 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:26:25.850 id=70 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:26:25.887 id=71 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+19:26:33.216 id=72 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:26:33.802 id=73 [debug] handled request client -> server textDocument/codeAction in 819µs
+
+19:26:35.187 id=74 [debug] handled request client -> server textDocument/hover in 1013ms
+
+19:26:35.187 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+19:26:35.187 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:26:35.187 id=75 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:26:35.195 id=76 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:26:36.640 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:26:36.640 [debug] sent notification server -> client window/logMessage
+
+19:26:36.892 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 410µs
+
+19:26:37.161 id=77 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+19:26:39.775 id=78 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+19:26:40.728 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:26:40.736 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:26:40.800 id=79 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+19:26:40.980 [debug] handled notification client -> server $/cancelRequest in 410µs
+
+19:26:42.626 [debug] handled notification client -> server textDocument/didChange in 1ms
+
+19:26:43.206 [debug] sent notification server -> client window/logMessage
+
+19:26:43.206 id=80 [debug] handled request client -> server textDocument/documentSymbol in 4ms
+
+19:26:43.357 [debug] handled notification client -> server textDocument/didChange in 2ms
+
+19:26:43.368 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+19:26:43.406 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+19:26:43.414 [debug] handled notification client -> server textDocument/didOpen in 2ms
+
+19:26:43.443 id=81 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:26:43.610 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+19:26:43.784 id=82 [debug] handled request client -> server textDocument/documentSymbol in 11ms
+
+19:26:43.803 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+19:26:43.807 id=83 [debug] handled request client -> server textDocument/codeAction in 614µs
+
+19:26:43.868 id=84 [debug] handled request client -> server textDocument/documentSymbol in 42ms
+
+19:26:43.868 [debug] handled notification client -> server $/cancelRequest in 103µs
+
+19:26:43.869 id=85 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:26:43.869 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+19:26:43.869 [debug] handled notification client -> server $/cancelRequest in 0µs
+
+19:26:43.876 id=86 [debug] handled request client -> server textDocument/documentSymbol in 9ms
+
+19:26:43.876 id=87 [debug] handled request client -> server textDocument/codeAction in 512µs
+
+19:26:43.876 [debug] handled notification client -> server $/cancelRequest in 204µs
+
+19:26:43.876 id=88 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+19:26:44.317 id=89 [debug] handled request client -> server textDocument/documentSymbol in 21ms
+
+19:26:44.762 id=90 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+19:26:45.462 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:26:45.462 [debug] sent notification server -> client window/logMessage
+
+19:26:46.118 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 2ms
+
+19:26:47.892 id=91 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+19:26:48.224 id=92 [debug] handled request client -> server textDocument/documentSymbol in 7ms
+
+19:29:41.188 [debug] handled notification client -> server textDocument/didClose in 20ms
+
+19:29:41.188 [debug] handled notification client -> server textDocument/didClose in 614µs
+
+19:29:46.038 id=93 [debug] handled request client -> server textDocument/codeAction in 410µs
+
+19:29:46.294 id=94 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+19:29:46.372 id=95 [debug] handled request client -> server textDocument/documentSymbol in 14ms
+
+19:29:52.198 id=96 [debug] handled request client -> server textDocument/hover in 1002ms
+
+19:29:52.199 [debug] handled notification client -> server $/cancelRequest in 307µs
+
+19:29:55.219 id=97 [debug] handled request client -> server textDocument/codeAction in 615µs
+
+19:29:56.441 id=98 [debug] handled request client -> server textDocument/hover in 1012ms
+
+19:29:56.441 [debug] handled notification client -> server $/cancelRequest in 307µs
+
+19:29:56.445 [debug] handled notification client -> server textDocument/didChange in 3ms
+
+19:29:56.447 id=99 [debug] handled request client -> server textDocument/codeAction in 1ms
+
+19:29:56.457 id=100 [debug] handled request client -> server textDocument/documentSymbol in 15ms
+
+19:29:56.482 id=101 [debug] handled request client -> server textDocument/documentSymbol in 18ms
+
+19:29:57.120 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+19:29:57.120 [debug] sent notification server -> client window/logMessage
+
+19:29:57.387 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms

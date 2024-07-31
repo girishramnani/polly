@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Polly</title>
-     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
-  
+
   <body>
     <header class="px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
@@ -13,7 +13,7 @@
             Polly
           </a>
         </div>
-        
+
         <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
           <%= if assigns[:current_user] do %>
             <.link
@@ -31,7 +31,7 @@
         </div>
       </div>
     </header>
-    
+
     <main class="px-4 py-20 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl">
         <.flash_group flash={@flash} />
@@ -43,7 +43,7 @@
                 <.link navigate={~p"/polls/#{poll.id}/edit"} class="button-link">
                   <.button class="edit-button">Edit</.button>
                 </.link>
-                
+
                 <div class="sr-only">
                   <.link navigate={~p"/polls/#{poll.id}"} class="text-blue-600 hover:underline">
                     Show
@@ -52,7 +52,7 @@
               </div>
             <% end %>
           <% end %>
-           <%= @inner_content %>
+          <%= @inner_content %>
         </div>
       </div>
     </main>

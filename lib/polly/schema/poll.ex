@@ -50,5 +50,4 @@ defmodule Polly.Schema.Poll do
   def has_option?(%Poll{options: options}, option_id) do
     Enum.any?(options, fn option -> option.id == option_id end)
   end
-
 end

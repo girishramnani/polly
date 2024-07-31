@@ -24,7 +24,6 @@ defmodule PollyWeb.PollLive.Edit do
     end
   end
 
-
   defp get_user_by_token(user_token) do
     case :ets.lookup(:users, user_token) do
       [{^user_token, user}] -> user
@@ -32,37 +31,37 @@ defmodule PollyWeb.PollLive.Edit do
     end
   end
 
-@impl true
-def handle_params(%{"id" => id}, _url, socket) do
-  case Polls.get_poll!(id) do
-    %Poll{} = poll ->
-      changeset = Polls.change_poll(poll)
-      {:noreply, assign(socket, poll: poll, changeset: changeset, form: to_form(changeset))}
+  @impl true
+  def handle_params(%{"id" => id}, _url, socket) do
+    case Polls.get_poll!(id) do
+      %Poll{} = poll ->
+        changeset = Polls.change_poll(poll)
+        {:noreply, assign(socket, poll: poll, changeset: changeset, form: to_form(changeset))}
 
-    _ ->
-      {:noreply,
-        socket
-        |> put_flash(:error, "Poll not found")
-        |> push_redirect(to: "/polls")}
+      _ ->
+        {:noreply,
+         socket
+         |> put_flash(:error, "Poll not found")
+         |> push_redirect(to: "/polls")}
+    end
   end
-end
 
-@impl true
-def handle_event("save", %{"poll" => poll_params}, socket) do
-  case Polls.update_poll(socket.assigns.poll, poll_params) do
-    {:ok, poll} ->
-      socket =
-        socket
-        |> put_flash(:info, "Poll updated successfully")
-        |> assign(:poll, poll)
-        |> push_redirect(to: "/polls")
+  @impl true
+  def handle_event("save", %{"poll" => poll_params}, socket) do
+    case Polls.update_poll(socket.assigns.poll, poll_params) do
+      {:ok, poll} ->
+        socket =
+          socket
+          |> put_flash(:info, "Poll updated successfully")
+          |> assign(:poll, poll)
+          |> push_redirect(to: "/polls")
 
-      {:noreply, socket}
+        {:noreply, socket}
 
-    {:error, %Ecto.Changeset{} = changeset} ->
-      {:noreply, assign(socket, changeset: changeset, form: to_form(changeset))}
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:noreply, assign(socket, changeset: changeset, form: to_form(changeset))}
+    end
   end
-end
 
   @impl true
   def handle_event("add-option", _, socket) do
@@ -105,7 +104,7 @@ end
       />
       <fieldset>
         <legend>Options</legend>
-         <%= hidden_input(@form, :options, value: "[]") %>
+        <%= hidden_input(@form, :options, value: "[]") %>
         <%= for option_form <- inputs_for(@form, :options) do %>
           <div class="m-4">
             <%= hidden_inputs_for(option_form) %>

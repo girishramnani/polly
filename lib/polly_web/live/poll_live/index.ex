@@ -21,9 +21,9 @@ defmodule PollyWeb.PollLive.Index do
 
       _ ->
         {:noreply,
-          socket
-          |> put_flash(:error, "Poll not found")
-          |> push_redirect(to: socket.assigns.redirect_path || "/polls")}
+         socket
+         |> put_flash(:error, "Poll not found")
+         |> push_redirect(to: socket.assigns.redirect_path || "/polls")}
     end
   end
 

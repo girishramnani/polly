@@ -22,6 +22,13 @@ jobs:
         elixir-version: '1.14'
         otp-version: '25'
 
+    - name: Debug Environment
+      run: |
+        mix --version
+        elixir --version
+        otp --version
+        env
+
     - name: Install dependencies
       run: mix deps.get
 
