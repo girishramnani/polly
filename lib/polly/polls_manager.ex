@@ -33,9 +33,12 @@ defmodule Polly.PollsManager do
   @spec get_poll!(binary(), boolean()) :: Poll.t()
   def get_poll!(poll_id, with_option_votes \\ false) do
     case @storage_module.get_poll!(poll_id, with_option_votes) do
-      nil -> raise ArgumentError, message: "Poll with ID #{poll_id} not found"
-      poll -> Map.replace(poll, :total_votes, get_poll_votes!(poll_id))
-              |> replace_option_votes(with_option_votes)
+      nil ->
+        raise ArgumentError, message: "Poll with ID #{poll_id} not found"
+
+      poll ->
+        Map.replace(poll, :total_votes, get_poll_votes!(poll_id))
+        |> replace_option_votes(with_option_votes)
     end
   end
 
@@ -75,13 +78,13 @@ defmodule Polly.PollsManager do
   end
 
   @spec update_poll(binary(), Poll.t()) :: :ok | {:error, atom()}
-def update_poll(poll_id, %Poll{} = updated_poll) do
-  if @storage_module.get_poll!(poll_id) do
-    @storage_module.update_poll(poll_id, updated_poll)
-  else
-    {:error, :poll_not_found}
+  def update_poll(poll_id, %Poll{} = updated_poll) do
+    if @storage_module.get_poll!(poll_id) do
+      @storage_module.update_poll(poll_id, updated_poll)
+    else
+      {:error, :poll_not_found}
+    end
   end
-end
 
   @spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
   def change_poll(%Poll{} = poll, attrs \\ %{}) do

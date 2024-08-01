@@ -65,7 +65,8 @@ defmodule Polly.ETSStorage do
         |> Map.replace(:total_votes, get_poll_votes!(poll_id))
         |> replace_option_votes(with_option_votes)
 
-      [] -> nil
+      [] ->
+        nil
     end
   end
 

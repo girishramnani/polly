@@ -26,7 +26,7 @@ jobs:
       run: |
         mix --version
         elixir --version
-        otp --version
+        # Remove the otp command, as it does not exist
         env
 
     - name: Install dependencies

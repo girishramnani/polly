@@ -41,5 +41,4 @@ defmodule Polly.TestPollCreation do
       IO.inspect({id, poll}, label: "Poll")
     end)
   end
-
 end

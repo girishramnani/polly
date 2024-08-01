@@ -55,33 +55,33 @@ defmodule Polly.Polls do
   end
 end
 
-  defp do_create_poll({:ok, %Poll{} = poll}) do
-    :ok = Polly.PollsManager.add_poll(poll)
-    {:ok, poll}
-  end
+defp do_create_poll({:ok, %Poll{} = poll}) do
+  :ok = Polly.PollsManager.add_poll(poll)
+  {:ok, poll}
+end
 
-  defp do_create_poll({:error, changeset}) do
-    {:error, changeset}
-  end
+defp do_create_poll({:error, changeset}) do
+  {:error, changeset}
+end
 
-  @spec update_poll(Poll.t(), map()) :: {:ok, Poll.t()} | {:error, Ecto.Changeset.t()}
-  def update_poll(%Poll{} = poll, attrs) do
-    poll
-    |> Poll.changeset(attrs)
-    |> Ecto.Changeset.apply_action(:update)
-    |> do_update_poll(poll)
-  end
+@spec update_poll(Poll.t(), map()) :: {:ok, Poll.t()} | {:error, Ecto.Changeset.t()}
+def update_poll(%Poll{} = poll, attrs) do
+  poll
+  |> Poll.changeset(attrs)
+  |> Ecto.Changeset.apply_action(:update)
+  |> do_update_poll(poll)
+end
 
-  defp do_update_poll({:ok, %Poll{} = updated_poll}, _poll) do
-    :ok = Polly.PollsManager.update_poll(updated_poll.id,updated_poll)
-    {:ok, updated_poll}
-  end
+defp do_update_poll({:ok, %Poll{} = updated_poll}, _poll) do
+  :ok = Polly.PollsManager.update_poll(updated_poll.id, updated_poll)
+  {:ok, updated_poll}
+end
 
-  defp do_update_poll({:error, changeset}, _poll) do
-    {:error, changeset}
-  end
+defp do_update_poll({:error, changeset}, _poll) do
+  {:error, changeset}
+end
 
-  @spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
-  def change_poll(%Poll{} = poll, attrs \\ %{}) do
-    Poll.changeset(poll, attrs)
-  end
+@spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
+def change_poll(%Poll{} = poll, attrs \\ %{}) do
+  Poll.changeset(poll, attrs)
+end
