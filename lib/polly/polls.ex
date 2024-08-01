@@ -41,17 +41,19 @@ defmodule Polly.Polls do
   end
 
   def create_poll(params) do
-    Poll.changeset(%Poll{}, params)
-    |> Ecto.Changeset.apply_action(:insert)
+    %Poll{}
+    |> Poll.changeset(params)
+    |> apply_action(:insert)
     |> case do
       {:ok, poll} ->
-        :ets.insert(:polls, {poll.id, poll})
+        PollsManager.add_poll(poll)
         {:ok, poll}
 
       {:error, changeset} ->
         {:error, changeset}
     end
   end
+end
 
   defp do_create_poll({:ok, %Poll{} = poll}) do
     :ok = Polly.PollsManager.add_poll(poll)
@@ -71,7 +73,7 @@ defmodule Polly.Polls do
   end
 
   defp do_update_poll({:ok, %Poll{} = updated_poll}, _poll) do
-    :ok = Polly.PollsManager.update_poll(updated_poll)
+    :ok = Polly.PollsManager.update_poll(updated_poll.id,updated_poll)
     {:ok, updated_poll}
   end
 
@@ -83,4 +85,3 @@ defmodule Polly.Polls do
   def change_poll(%Poll{} = poll, attrs \\ %{}) do
     Poll.changeset(poll, attrs)
   end
-end

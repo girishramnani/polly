@@ -1,6 +1,15 @@
 defmodule Polly.TestPollCreation do
   alias Polly.ETSStorage
   alias Polly.Schema.Poll
+  import ExUnit.Callbacks
+
+  setup do
+    :ets.delete_all_objects(:polls)
+    :ets.delete_all_objects(:polls_votes)
+    :ets.delete_all_objects(:polls_options_votes)
+    :ets.delete_all_objects(:user_tokens)
+    :ok
+  end
 
   def create_and_check_poll(poll_params) do
     poll = %Poll{
@@ -32,4 +41,5 @@ defmodule Polly.TestPollCreation do
       IO.inspect({id, poll}, label: "Poll")
     end)
   end
+
 end
