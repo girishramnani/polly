@@ -41193,3 +41193,9 @@ This will trigger a full recompilation in order to re-index your codebase.
 16:32:34.446 [debug] handled notification client -> server textDocument/didClose in 410µs
 
 16:33:24.985 [debug] handled notification client -> server textDocument/didOpen in 1ms
+
+16:36:24.969 [debug] handled notification client -> server textDocument/didClose in 410µs
+
+17:17:32.719 [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+17:20:32.701 [debug] handled notification client -> server textDocument/didClose in 205µs
