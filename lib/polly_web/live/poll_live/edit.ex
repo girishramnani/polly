@@ -6,15 +6,44 @@ defmodule PollyWeb.PollLive.Edit do
   alias Polly.Schema.Option
 
   @impl true
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, :page_title, "Edit Poll")}
+  def mount(_params, %{"user_token" => user_token} = session, socket) do
+    IO.inspect(session, label: "Mount session")
+    IO.inspect(socket, label: "Mount socket")
+
+    case get_user_by_token(user_token) do
+      nil ->
+        {:error, :unauthorized}
+
+      current_user ->
+        socket =
+          socket
+          |> assign(:current_user, current_user)
+          |> assign(:page_title, "Edit Poll")
+
+        {:ok, socket}
+    end
+  end
+
+  defp get_user_by_token(user_token) do
+    case :ets.lookup(:users, user_token) do
+      [{^user_token, user}] -> user
+      [] -> nil
+    end
   end
 
   @impl true
-  def handle_params(%{"id" => id}, _, socket) do
-    poll = Polls.get_poll!(id)
-    changeset = Polls.change_poll(poll)
-    {:noreply, assign(socket, poll: poll, changeset: changeset, form: to_form(changeset))}
+  def handle_params(%{"id" => id}, _url, socket) do
+    case Polls.get_poll!(id) do
+      %Poll{} = poll ->
+        changeset = Polls.change_poll(poll)
+        {:noreply, assign(socket, poll: poll, changeset: changeset, form: to_form(changeset))}
+
+      _ ->
+        {:noreply,
+         socket
+         |> put_flash(:error, "Poll not found")
+         |> push_redirect(to: "/polls")}
+    end
   end
 
   @impl true
@@ -25,7 +54,7 @@ defmodule PollyWeb.PollLive.Edit do
           socket
           |> put_flash(:info, "Poll updated successfully")
           |> assign(:poll, poll)
-          |> push_redirect(to: Routes.poll_index_path(socket, :index))
+          |> push_redirect(to: "/polls")
 
         {:noreply, socket}
 
@@ -40,7 +69,10 @@ defmodule PollyWeb.PollLive.Edit do
       update(socket, :changeset, fn changeset ->
         existing = Ecto.Changeset.get_field(changeset, :options, [])
         new_option_changeset = %Option{} |> Ecto.Changeset.change()
-        new_option_changeset = Ecto.Changeset.put_change(new_option_changeset, :text, "New Option Text")
+
+        new_option_changeset =
+          Ecto.Changeset.put_change(new_option_changeset, :text, "New Option Text")
+
         Ecto.Changeset.put_embed(changeset, :options, existing ++ [new_option_changeset])
       end)
 
@@ -55,11 +87,7 @@ defmodule PollyWeb.PollLive.Edit do
       Edit Poll
     </.header>
 
-    <.simple_form
-      for={@form}
-      id="poll-form"
-      phx-submit="save"
-    >
+    <.simple_form for={@form} id="poll-form" phx-submit="save">
       <.input
         field={@form[:title]}
         name="title"
@@ -74,7 +102,6 @@ defmodule PollyWeb.PollLive.Edit do
         label="Description"
         value={Phoenix.HTML.Form.input_value(@form, :description)}
       />
-
       <fieldset>
         <legend>Options</legend>
         <%= hidden_input(@form, :options, value: "[]") %>
@@ -88,10 +115,12 @@ defmodule PollyWeb.PollLive.Edit do
             />
           </div>
         <% end %>
+
         <.button id="add-option" type="button" phx-click="add-option">
           Add
         </.button>
       </fieldset>
+
       <:actions>
         <.button phx-disable-with="Saving...">Save Poll</.button>
       </:actions>

@@ -3,6 +3,7 @@ defmodule Polly.PollsManager do
   # alias Polly.StorageBehaviour
 
   @storage_module Application.compile_env(:polly, :storage_module, Polly.ETSStorage)
+
   def init() do
     @storage_module.init()
   end
@@ -31,9 +32,14 @@ defmodule Polly.PollsManager do
 
   @spec get_poll!(binary(), boolean()) :: Poll.t()
   def get_poll!(poll_id, with_option_votes \\ false) do
-    @storage_module.get_poll!(poll_id, with_option_votes)
-    |> Map.replace(:total_votes, get_poll_votes!(poll_id))
-    |> replace_option_votes(with_option_votes)
+    case @storage_module.get_poll!(poll_id, with_option_votes) do
+      nil ->
+        raise ArgumentError, message: "Poll with ID #{poll_id} not found"
+
+      poll ->
+        Map.replace(poll, :total_votes, get_poll_votes!(poll_id))
+        |> replace_option_votes(with_option_votes)
+    end
   end
 
   @spec get_poll_simple!(binary()) :: Poll.t()
@@ -83,11 +89,5 @@ defmodule Polly.PollsManager do
   @spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
   def change_poll(%Poll{} = poll, attrs \\ %{}) do
     Poll.changeset(poll, attrs)
-  end
-
-
-  @spec update_poll(Poll.t()) :: :ok | {:error, any()}
-  def update_poll(%Poll{} = _poll) do
-    # Your ETS or other storage logic to update the poll
   end
 end
