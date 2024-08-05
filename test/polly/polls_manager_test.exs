@@ -55,7 +55,7 @@ defmodule Polly.PollsManagerTest do
     setup [:create_poll]
 
     test "lists all polls with ids", %{poll: poll} do
-      polls = Polly.Polls.list_polls_with_ids()
+      polls = Polly.Polls.list_polls()
       assert length(polls) == 1
       assert Enum.any?(polls, fn p -> p.id == poll.id end)
     end
@@ -127,5 +127,4 @@ defmodule Polly.PollsManagerTest do
       assert changeset.errors[:title] != nil
     end
   end
-
 end

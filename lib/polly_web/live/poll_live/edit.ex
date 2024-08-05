@@ -87,12 +87,11 @@ defmodule PollyWeb.PollLive.Edit do
             />
           </div>
         <% end %>
-        <.button id="add-option" type="button" phx-click="add-option">
-          Add
-        </.button>
+        <.button id="add-option" phx-click="add-option">Add Option</.button>
       </fieldset>
+
       <:actions>
-        <.button phx-disable-with="Saving...">Save Poll</.button>
+        <.button type="submit">Save</.button>
       </:actions>
     </.simple_form>
     """

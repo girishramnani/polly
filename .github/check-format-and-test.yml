@@ -1,0 +1,44 @@
+name: Check Format and Run Tests
+
+on:
+  pull_request:
+    paths:
+      - '**/*.ex'
+      - '**/*.exs'
+      - 'mix.exs'
+      - '.formatter.exs'
+
+jobs:
+  format-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Elixir
+      uses: erlef/setup-elixir@v2
+      with:
+        elixir-version: '1.14'
+        otp-version: '25'
+
+    - name: Debug Environment
+      run: |
+        mix --version
+        elixir --version
+        otp --version
+        env
+
+    - name: Install dependencies
+      run: mix deps.get
+
+    - name: Check code formatting
+      run: |
+        mix format --check-formatted
+        if [ $? -ne 0 ]; then
+          echo "Code is not formatted correctly. Please run 'mix format' and commit your changes."
+          exit 1
+        fi
+
+    - name: Run tests
+      run: mix test

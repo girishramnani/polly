@@ -1,8 +1,7 @@
 defmodule Polly.PollsManager do
   alias Polly.Schema.Poll
-  # alias Polly.StorageBehaviour
-
   @storage_module Application.compile_env(:polly, :storage_module, Polly.ETSStorage)
+
   def init() do
     @storage_module.init()
   end
@@ -21,7 +20,7 @@ defmodule Polly.PollsManager do
     end
   end
 
-  @spec list_polls_with_ids :: Keyword.t()
+  @spec list_polls_with_ids() :: Keyword.t()
   def list_polls_with_ids() do
     @storage_module.list_polls_with_ids()
     |> Enum.map(fn {id, poll} ->
@@ -73,21 +72,20 @@ defmodule Polly.PollsManager do
 
   @spec update_poll(binary(), Poll.t()) :: :ok | {:error, atom()}
   def update_poll(poll_id, %Poll{} = updated_poll) do
-    if @storage_module.get_poll!(poll_id) do
-      @storage_module.update_poll(poll_id, updated_poll)
-    else
-      {:error, :poll_not_found}
+    try do
+      if @storage_module.get_poll!(poll_id) do
+        @storage_module.update_poll(poll_id, updated_poll)
+      else
+        {:error, :poll_not_found}
+      end
+    rescue
+      ArgumentError ->
+        {:error, :poll_not_found}
     end
   end
 
   @spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
   def change_poll(%Poll{} = poll, attrs \\ %{}) do
     Poll.changeset(poll, attrs)
-  end
-
-
-  @spec update_poll(Poll.t()) :: :ok | {:error, any()}
-  def update_poll(%Poll{} = _poll) do
-    # Your ETS or other storage logic to update the poll
   end
 end

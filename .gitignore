@@ -35,3 +35,31 @@ polly-*.tar
 npm-debug.log
 /assets/node_modules/
 
+.elixir_ls/
+*.plt
+credo_report/
+.elixir-tools
+
+# Ignore directories created by editors and IDEs
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore node_modules (if using assets with Node.js)
+assets/node_modules/
+
+# Ignore logs and temporary files
+/log
+/tmp
+
+# Ignore secrets and environment variables
+config/*.secret.exs
+.env
+.env.*
+
+# Ignore compiled output
+*.beam
+*.ez
