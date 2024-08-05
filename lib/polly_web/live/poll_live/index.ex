@@ -39,12 +39,12 @@ defmodule PollyWeb.PollLive.Index do
   defp apply_action(socket, :edit, %{"id" => id}) do
     poll = Polly.PollsManager.get_poll!(id)
     changeset = Polly.PollsManager.change_poll(poll)
+
     socket
     |> assign(:page_title, "Edit Poll")
     |> assign(:poll, poll)
     |> assign(:changeset, changeset)
   end
-
 
   @impl true
   def handle_info(%{topic: @topic, payload: _state}, socket) do
@@ -74,11 +74,14 @@ defmodule PollyWeb.PollLive.Index do
 
     <.table id="polls" rows={@polls} row_click={fn {_id, poll} -> JS.navigate(~p"/polls/#{poll}") end}>
       <:col :let={{_id, poll}} label="Title"><%= poll.title %></:col>
+      
       <:col :let={{_id, poll}} label="Total Votes"><%= poll.total_votes %></:col>
+      
       <:action :let={{_id, poll}}>
         <.link navigate={~p"/polls/#{poll}/edit"}>
           <.button>Edit</.button>
         </.link>
+        
         <div class="sr-only">
           <.link navigate={~p"/polls/#{poll}"}>Show</.link>
         </div>
@@ -97,5 +100,4 @@ defmodule PollyWeb.PollLive.Index do
     </.modal>
     """
   end
-
 end

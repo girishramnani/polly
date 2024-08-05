@@ -39,7 +39,10 @@ defmodule PollyWeb.PollLive.Edit do
       update(socket, :changeset, fn changeset ->
         existing = Ecto.Changeset.get_field(changeset, :options, [])
         new_option_changeset = %Option{} |> Ecto.Changeset.change()
-        new_option_changeset = Ecto.Changeset.put_change(new_option_changeset, :text, "New Option Text")
+
+        new_option_changeset =
+          Ecto.Changeset.put_change(new_option_changeset, :text, "New Option Text")
+
         Ecto.Changeset.put_embed(changeset, :options, existing ++ [new_option_changeset])
       end)
 
@@ -54,11 +57,7 @@ defmodule PollyWeb.PollLive.Edit do
       Edit Poll
     </.header>
 
-    <.simple_form
-      for={@form}
-      id="poll-form"
-      phx-submit="save"
-    >
+    <.simple_form for={@form} id="poll-form" phx-submit="save">
       <.input
         field={@form[:title]}
         name="title"
@@ -73,10 +72,9 @@ defmodule PollyWeb.PollLive.Edit do
         label="Description"
         value={Phoenix.HTML.Form.input_value(@form, :description)}
       />
-
       <fieldset>
         <legend>Options</legend>
-        <%= hidden_input(@form, :options, value: "[]") %>
+         <%= hidden_input(@form, :options, value: "[]") %>
         <%= for option_form <- inputs_for(@form, :options) do %>
           <div class="m-4">
             <%= hidden_inputs_for(option_form) %>
@@ -87,9 +85,10 @@ defmodule PollyWeb.PollLive.Edit do
             />
           </div>
         <% end %>
+        
         <.button id="add-option" phx-click="add-option">Add Option</.button>
       </fieldset>
-
+      
       <:actions>
         <.button type="submit">Save</.button>
       </:actions>

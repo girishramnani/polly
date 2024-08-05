@@ -12,6 +12,18 @@ defmodule Polly.PollsManagerTest do
     %{poll: poll}
   end
 
+  setup_all do
+    :ets.new(:polls, [:set, :public, :named_table])
+    :ets.new(:options, [:set, :public, :named_table])
+    :ok
+  end
+
+  setup do
+    :ets.delete_all_objects(:polls)
+    :ets.delete_all_objects(:options)
+    :ok
+  end
+
   setup do
     # Ensure only one poll is created for this test
     {:ok, poll} = Polly.Polls.create_poll(%{title: "Test Poll"})
@@ -55,9 +67,10 @@ defmodule Polly.PollsManagerTest do
     setup [:create_poll]
 
     test "lists all polls with ids", %{poll: poll} do
-      polls = Polly.Polls.list_polls()
+      assert PollsManager.add_poll(poll) == :ok
+      polls = PollsManager.list_polls_with_ids()
       assert length(polls) == 1
-      assert Enum.any?(polls, fn p -> p.id == poll.id end)
+      assert Enum.any?(polls, fn {id, _} -> id == poll.id end)
     end
   end
 

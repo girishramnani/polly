@@ -9,8 +9,21 @@ defmodule Polly.ETSStorage do
   @impl Polly.StorageBehaviour
   def init() do
     :ets.new(@polls, [:public, :named_table, write_concurrency: true, read_concurrency: true])
-    :ets.new(@polls_votes, [:public, :named_table, write_concurrency: true, read_concurrency: true])
-    :ets.new(@polls_options_votes, [:public, :named_table, write_concurrency: true, read_concurrency: true])
+
+    :ets.new(@polls_votes, [
+      :public,
+      :named_table,
+      write_concurrency: true,
+      read_concurrency: true
+    ])
+
+    :ets.new(@polls_options_votes, [
+      :public,
+      :named_table,
+      write_concurrency: true,
+      read_concurrency: true
+    ])
+
     :ok
   end
 
@@ -61,6 +74,7 @@ defmodule Polly.ETSStorage do
       Enum.map(poll.options, fn option ->
         Map.replace(option, :votes, safe_lookup_element(option.id))
       end)
+
     Map.replace(poll, :options, updated_options)
   end
 
