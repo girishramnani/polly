@@ -35,9 +35,6 @@
         <%= if assigns[:polls] do %>
           <%= for {_id, poll} <- @polls do %>
             <div class="flex items-center gap-4">
-              <.link navigate={~p"/polls/#{poll.id}/edit"} class="button-link">
-                <.button class="edit-button">Edit</.button>
-              </.link>
               <div class="sr-only">
                 <.link navigate={~p"/polls/#{poll.id}"} class="text-blue-600 hover:underline">
                   Show

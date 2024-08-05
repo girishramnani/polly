@@ -2,7 +2,6 @@ defmodule PollyWeb.PollLive.Edit do
   use PollyWeb, :live_view
 
   alias Polly.Polls
-  alias Polly.Schema.Poll
   alias Polly.Schema.Option
 
   @impl true
@@ -25,7 +24,7 @@ defmodule PollyWeb.PollLive.Edit do
           socket
           |> put_flash(:info, "Poll updated successfully")
           |> assign(:poll, poll)
-          |> push_redirect(to: Routes.poll_index_path(socket, :index))
+          |> push_redirect(to: "/")
 
         {:noreply, socket}
 
