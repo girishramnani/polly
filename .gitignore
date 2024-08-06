@@ -64,4 +64,4 @@ config/*.secret.exs
 *.beam
 *.ez
 
-/.elixir-tools
+.elixir-tools/
