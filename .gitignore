@@ -63,3 +63,5 @@ config/*.secret.exs
 # Ignore compiled output
 *.beam
 *.ez
+
+\.elixir-tools\next-ls.log
