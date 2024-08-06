@@ -26341,3 +26341,15 @@ This will trigger a full recompilation in order to re-index your codebase.
 15:05:05.511 [debug] handled notification client -> server textDocument/didClose in 205µs
 
 15:16:02.973 [debug] handled notification client -> server $/setTrace in 45ms
+
+15:23:58.915 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 19ms
+
+15:24:01.003 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 615µs
+
+15:28:58.634 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+15:30:41.891 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 307µs
+
+15:32:51.175 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+15:33:36.740 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 615µs
