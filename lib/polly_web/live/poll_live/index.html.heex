@@ -9,9 +9,7 @@
 
 <.table id="polls" rows={@polls} row_click={fn {_id, poll} -> JS.navigate(~p"/polls/#{poll}") end}>
   <:col :let={{_id, poll}} label="Title"><%= poll.title %></:col>
-  
   <:col :let={{_id, poll}} label="Total Votes"><%= poll.total_votes %></:col>
-  
   <:action :let={{_id, poll}}>
     <div class="sr-only">
       <.link navigate={~p"/polls/#{poll}"}>Show</.link>
