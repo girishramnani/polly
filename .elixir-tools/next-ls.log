@@ -26128,3 +26128,111 @@ This will trigger a full recompilation in order to re-index your codebase.
 17:24:49.617 id=24 [debug] handled request client -> server textDocument/codeAction in 614µs
 
 17:24:50.260 id=25 [debug] handled request client -> server textDocument/codeAction in 717µs
+
+13:44:39.943 [info] Loading 41 CA(s) from :otp store
+
+13:44:46.346 id=0 [debug] handled request client -> server initialize in 4613ms
+
+13:44:46.516 [debug] sent notification server -> client window/logMessage
+
+13:44:46.560 [debug] NextLS v0.23.1 has initialized!
+
+13:44:46.560 [debug] sent notification server -> client window/logMessage
+
+13:44:46.562 [debug] Log file located at c:/Gaurav/Projects/polly/.elixir-tools/next-ls.log
+
+13:44:46.602 [debug] sent notification server -> client window/logMessage
+
+13:44:46.602 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+13:44:46.602 id=67 [debug] sent request server -> client client/registerCapability
+
+13:45:18.319 [debug] sent notification server -> client window/logMessage
+
+13:45:18.319 [debug] Booting runtimes...
+
+13:45:18.404 id=34 [debug] sent request server -> client window/workDoneProgress/create
+
+13:45:18.476 [debug] sent notification server -> client $/progress
+
+13:45:18.863 [debug] sent notification server -> client window/logMessage
+
+13:45:18.863 [info] Beginning DB migration...
+
+13:45:19.019 [debug] sent notification server -> client window/logMessage
+
+13:45:19.019 [info] Database is on the latest version: 7
+
+13:45:19.019 [debug] sent notification server -> client window/logMessage
+
+13:45:19.020 [info] Finished DB migration...
+
+13:45:19.221 [error] ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, NextLS.Runtime, {:badarg, [{NextLS.Runtime, :init, 1, [file: ~c"lib/next_ls/runtime.ex", line: 135, error_info: %{cause: {1, :binary, :type, nil}, function: :format_bs_fail, module: :erl_erts_errors}]}, {:gen_server, :init_it, 2, [file: ~c"gen_server.erl", line: 2057]}, {:gen_server, :init_it, 6, [file: ~c"gen_server.erl", line: 2012]}, {:proc_lib, :init_p_do_apply, 3, [file: ~c"proc_lib.erl", line: 329]}]}}}}
+    (next_ls 0.23.1) lib/next_ls.ex:899: anonymous fn/5 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/enum.ex:2531: Enum."-reduce/3-lists^foldl/2-0-"/3
+    (next_ls 0.23.1) lib/next_ls.ex:894: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+    (stdlib 6.0) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
+
+
+13:45:19.221 [debug] sent notification server -> client window/logMessage
+
+13:45:19.388 [debug] handled notification client -> server textDocument/didOpen in 165ms
+
+13:45:19.800 id=1 [debug] handled request client -> server textDocument/documentSymbol in 412ms
+
+13:45:20.545 id=2 [debug] handled request client -> server textDocument/codeAction in 743ms
+
+13:45:20.553 id=3 [debug] handled request client -> server textDocument/documentSymbol in 8ms
+
+13:45:21.666 id=4 [debug] handled request client -> server textDocument/hover in 1111ms
+
+13:45:21.694 [debug] handled notification client -> server $/cancelRequest in 35ms
+
+13:45:22.703 id=5 [debug] handled request client -> server textDocument/hover in 1002ms
+
+13:45:22.703 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+13:45:22.704 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+13:45:22.704 id=6 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+13:45:22.704 id=7 [debug] handled request client -> server textDocument/codeAction in 409µs
+
+13:45:22.704 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+13:45:23.707 id=8 [debug] handled request client -> server textDocument/hover in 1001ms
+
+13:45:23.708 [debug] handled notification client -> server $/cancelRequest in 2ms
+
+13:45:23.708 [debug] handled notification client -> server $/cancelRequest in 307µs
+
+13:45:23.710 [debug] handled notification client -> server $/cancelRequest in 205µs
+
+13:45:23.801 [debug] handled notification client -> server textDocument/didChange in 92ms
+
+13:45:23.808 id=9 [debug] handled request client -> server textDocument/documentSymbol in 6ms
+
+13:45:23.903 [error] ** (BadMapError) expected a map, got: nil
+    (stdlib 6.0) :maps.merge(%{}, nil)
+    (next_ls 0.23.1) lib/next_ls.ex:981: anonymous fn/2 in NextLS.handle_notification/2
+    (elixir 1.17.1) lib/map.ex:916: Map.update!/3
+    (next_ls 0.23.1) lib/next_ls.ex:981: NextLS.handle_notification/2
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:478: anonymous fn/2 in GenLSP.loop/3
+    (telemetry 1.2.1) /home/mitchell/src/next-ls/deps/telemetry/src/telemetry.erl:321: :telemetry.span/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:474: anonymous fn/7 in GenLSP.loop/3
+    (gen_lsp 0.10.0) lib/gen_lsp.ex:553: GenLSP.attempt/4
+
+
+13:45:23.903 [debug] sent notification server -> client window/logMessage
+
+13:45:23.903 [debug] handled notification client -> server $/cancelRequest in 102µs
+
+13:45:23.916 id=10 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+13:45:23.997 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 81ms
+
+14:01:19.006 [debug] handled notification client -> server $/setTrace in 50ms

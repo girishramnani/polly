@@ -66,9 +66,11 @@ defmodule Polly.ETSStorage do
 
   @impl Polly.StorageBehaviour
   def get_poll_votes!(poll_id) do
-    :ets.lookup_element(@polls_votes, poll_id, 2)
+    case :ets.lookup(:polls_votes, poll_id) do
+      [{^poll_id, votes}] -> votes
+      [] -> []
+    end
   end
-
   def replace_option_votes(poll, true) do
     updated_options =
       Enum.map(poll.options, fn option ->

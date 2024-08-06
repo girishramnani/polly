@@ -48,10 +48,11 @@ defmodule Polly.Polls do
     |> do_update_poll(poll)
   end
 
-  defp do_update_poll({:ok, %Poll{} = updated_poll}, _poll) do
-    :ok = Polly.PollsManager.update_poll(updated_poll)
+  defp do_update_poll({:ok, %Poll{} = updated_poll}, poll_id) do
+    :ok = Polly.PollsManager.update_poll(poll_id, updated_poll)
     {:ok, updated_poll}
   end
+
 
   defp do_update_poll({:error, changeset}, _poll) do
     {:error, changeset}
