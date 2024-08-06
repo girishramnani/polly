@@ -109,4 +109,17 @@ defmodule Polly.ETSStorage do
       {:error, :poll_not_found}
     end
   end
+
+  @impl Polly.StorageBehaviour
+  @spec delete_poll(binary()) :: :ok | {:error, term()}
+  def delete_poll(id) do
+    case :ets.lookup(:polls, id) do
+      [] ->
+        {:error, :poll_not_found}
+
+      _ ->
+        :ets.delete(:polls, id)
+        :ok
+    end
+  end
 end

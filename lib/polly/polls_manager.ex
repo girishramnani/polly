@@ -88,4 +88,17 @@ defmodule Polly.PollsManager do
   def change_poll(%Poll{} = poll, attrs \\ %{}) do
     Poll.changeset(poll, attrs)
   end
+
+
+  @spec remove_poll(binary()) :: :ok | {:error, term()}
+  def remove_poll(id) do
+    case @storage_module.get_poll!(id) do
+      nil ->
+        {:error, :poll_not_found}
+
+      _poll ->
+        @storage_module.delete_poll(id)
+        :ok
+    end
+  end
 end

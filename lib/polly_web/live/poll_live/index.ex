@@ -9,13 +9,7 @@ defmodule PollyWeb.PollLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    # we subscribe to a topic for the index page, this way
-    # when someone votes we could update this page
     PollyWeb.Endpoint.subscribe(@topic)
-
-    # Though of using streams here but as per chris Mccord's
-    # recent comment streams dont support a full update i.e.
-    # cannot replace a stream with a new stream
     {:ok, assign(socket, :polls, Polls.list_polls())}
   end
 
@@ -48,16 +42,24 @@ defmodule PollyWeb.PollLive.Index do
 
   @impl true
   def handle_info(%{topic: @topic, payload: _state}, socket) do
-    # we basically update the whole list of polls
     {:noreply, update(socket, :polls, fn _polls -> Polls.list_polls() end)}
   end
 
   @impl true
   def handle_info({PollyWeb.PollLive.FormComponent, {:saved, poll}}, socket) do
-    # broadcast a new poll event so other users can see updated poll list
-    # in real time
     PollyWeb.Endpoint.broadcast(@topic, @new_poll_event, poll)
     {:noreply, update(socket, :polls, fn _polls -> Polls.list_polls() end)}
+  end
+
+  @impl true
+  def handle_event("delete", %{"id" => id}, socket) do
+    case Polls.delete_poll(id) do
+      :ok ->
+        {:noreply, assign(socket, :polls, Polls.list_polls())}
+
+      {:error, _reason} ->
+        {:noreply, put_flash(socket, :error, "Failed to delete poll")}
+    end
   end
 
   @impl true
@@ -72,19 +74,22 @@ defmodule PollyWeb.PollLive.Index do
       </:actions>
     </.header>
 
-    <.table id="polls" rows={@polls} row_click={fn {_id, poll} -> JS.navigate(~p"/polls/#{poll}") end}>
+    <.table id="polls" rows={@polls} row_click={fn {_id, poll} -> JS.navigate(~p"/polls/#{poll.id}") end}>
       <:col :let={{_id, poll}} label="Title"><%= poll.title %></:col>
-      
       <:col :let={{_id, poll}} label="Total Votes"><%= poll.total_votes %></:col>
-      
+
       <:action :let={{_id, poll}}>
-        <.link navigate={~p"/polls/#{poll}/edit"}>
+        <.link navigate={~p"/polls/#{poll.id}/edit"}>
           <.button>Edit</.button>
         </.link>
-        
+
         <div class="sr-only">
-          <.link navigate={~p"/polls/#{poll}"}>Show</.link>
+          <.link navigate={~p"/polls/#{poll.id}"}>Show</.link>
         </div>
+
+        <button phx-click="delete" phx-value-id={poll.id} class="btn btn-danger">
+          Delete
+        </button>
       </:action>
     </.table>
 
