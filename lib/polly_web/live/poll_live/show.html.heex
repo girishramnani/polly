@@ -1,8 +1,7 @@
 <.header>
   <.back navigate={~p"/"}>Back to polls</.back>
-   <%= @poll.title %>
+  <%= @poll.title %>
   <:subtitle><%= @poll.description %></:subtitle>
-  
   <:actions>
     <.link
       :if={@live_action == :show}
@@ -12,7 +11,7 @@
     >
       Show Result
     </.link>
-    
+
     <.link
       :if={@live_action == :show_result}
       navigate={~p"/polls/#{@poll.id}"}
@@ -40,7 +39,6 @@
         selected_option_id={@selected_option_id}
       />
     </div>
-    
     <.button phx-disable-with="Submitting" class="w-full">
       Submit
     </.button>
