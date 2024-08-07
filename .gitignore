@@ -57,6 +57,8 @@ assets/node_modules/
 
 # Ignore secrets and environment variables
 config/*.secret.exs
+config/*.prod.exs
+config/*.dev.exs
 .env
 .env.*
 
