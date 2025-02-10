@@ -4,6 +4,7 @@ defmodule Polly.Polls do
   """
   alias Polly.Schema.Poll
 
+  @spec list_polls() :: [Poll.t()]
   def list_polls() do
     Polly.PollsManager.list_polls_with_ids()
   end
@@ -18,10 +19,15 @@ defmodule Polly.Polls do
     end
   end
 
+  @spec get_poll!(binary()) :: Poll.t()
+  def get_poll!(id) do
+    Polly.PollsManager.get_poll_simple!(id)
+  end
+
   @spec create_poll(map()) :: {:ok, Poll.t()} | {:error, Ecto.Changeset.t()}
   def create_poll(params) do
     Poll.changeset(%Poll{}, params)
-    |> Ecto.Changeset.apply_action(:update)
+    |> Ecto.Changeset.apply_action(:insert)
     |> do_create_poll()
   end
 
@@ -33,4 +39,40 @@ defmodule Polly.Polls do
   defp do_create_poll({:error, changeset}) do
     {:error, changeset}
   end
+
+  @spec update_poll(Poll.t(), map()) :: {:ok, Poll.t()} | {:error, Ecto.Changeset.t()}
+  def update_poll(%Poll{} = poll, attrs) do
+    poll
+    |> Poll.changeset(attrs)
+    |> Ecto.Changeset.apply_action(:update)
+    |> do_update_poll(poll)
+  end
+
+  defp do_update_poll({:ok, %Poll{} = updated_poll}, poll_id) do
+    :ok = Polly.PollsManager.update_poll(poll_id, updated_poll)
+    {:ok, updated_poll}
+  end
+
+
+  defp do_update_poll({:error, changeset}, _poll) do
+    {:error, changeset}
+  end
+
+  @spec change_poll(Poll.t(), map()) :: Ecto.Changeset.t()
+  def change_poll(%Poll{} = poll, attrs \\ %{}) do
+    Poll.changeset(poll, attrs)
+  end
+
+  @spec delete_poll(binary()) :: :ok | {:error, term()}
+  def delete_poll(id) do
+    case Polly.PollsManager.get_poll!(id) do
+      nil ->
+        {:error, :poll_not_found}
+
+      poll ->
+        Polly.PollsManager.remove_poll(id)
+        :ok
+    end
+  end
+
 end

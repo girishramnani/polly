@@ -51,6 +51,7 @@ defmodule PollyWeb.PollyComponents do
   def result(assigns) do
     ~H"""
     <h1 class="mb-2"><%= @label %></h1>
+
     <div {@rest} class={@class}>
       <div class="h-6 rounded-xl flex overflow-hidden">
         <span

@@ -3,3 +3,25 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Bootstrap Danger Color */
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker shade on hover */
+}

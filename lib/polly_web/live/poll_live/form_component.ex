@@ -12,7 +12,7 @@ defmodule PollyWeb.PollLive.FormComponent do
         <%= @title %>
         <:subtitle>Create a New Poll</:subtitle>
       </.header>
-
+      
       <.simple_form
         for={@form}
         id="poll-form"
@@ -22,21 +22,20 @@ defmodule PollyWeb.PollLive.FormComponent do
       >
         <.input field={@form[:title]} type="text" label="Title" />
         <.input field={@form[:description]} type="textarea" label="Description" />
-
         <fieldset>
           <legend>Options</legend>
-          <%= hidden_input(@form, :options, value: "[]") %>
+           <%= hidden_input(@form, :options, value: "[]") %>
           <%= for f_option <- inputs_for(@form, :options) do %>
             <div class="m-4">
-              <%= hidden_inputs_for(f_option) %>
-              <.input field={f_option[:text]} type="text" />
+              <%= hidden_inputs_for(f_option) %> <.input field={f_option[:text]} type="text" />
             </div>
           <% end %>
+          
           <.button id="add-option" type="button" phx-click="add-option" phx-target={@myself}>
             Add
           </.button>
         </fieldset>
-
+        
         <:actions>
           <.button phx-disable-with="Saving...">Save Poll</.button>
         </:actions>
@@ -100,7 +99,6 @@ defmodule PollyWeb.PollLive.FormComponent do
   end
 
   defp save_poll(socket, :new, poll_params) do
-    # add the creator_username to the poll params so it can be added to the Poll
     poll_params
     |> Map.merge(%{"creator_username" => socket.assigns[:current_user]})
     |> Polls.create_poll()
@@ -111,6 +109,22 @@ defmodule PollyWeb.PollLive.FormComponent do
         {:noreply,
          socket
          |> put_flash(:info, "Poll created successfully")
+         |> push_patch(to: socket.assigns.patch)}
+
+      {:error, changeset} ->
+        {:noreply, assign_form(socket, changeset)}
+    end
+  end
+
+  defp save_poll(socket, :edit, poll_params) do
+    Polly.Polls.update_poll(socket.assigns.poll.id, poll_params)
+    |> case do
+      {:ok, poll} ->
+        notify_parent({:saved, poll})
+
+        {:noreply,
+         socket
+         |> put_flash(:info, "Poll updated successfully")
          |> push_patch(to: socket.assigns.patch)}
 
       {:error, changeset} ->
